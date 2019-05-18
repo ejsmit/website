@@ -1,0 +1,78 @@
+baseURL = "https://ejsmit.github.io/website/"
+languageCode = "en-gb"
+title = "My Notebook"
+
+# syntax highlighting
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+pluralizelisttitles = false
+
+
+[outputs]
+home = ["HTML", "RSS", "searchindex"]
+
+[outputFormats]
+  [outputFormats.searchindex]
+  baseName = "searchindex"
+  isPlainText = true
+  mediaType = "application/javascript"
+  notAlternative = true
+  path = "js"
+
+
+
+
+
+[params]
+
+subtitle = "System Admin and Development notes  "
+description = """ This is a repository for my own personal use.  The information 
+      on this site may not work outside of my own environment.  You have been warned...."""
+
+# Your copyright notice - appears in site footer.
+# To display a copyright symbol, type `&copy;`.
+copyright = "<small>&copy; ejsmit 2019</small>"
+
+
+  [params.searchindex]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
+
+
+
+# [privacy]
+#   [privacy.disqus]
+#     disable = false
+#   [privacy.googleAnalytics]
+#     anonymizeIP = false
+#     disable = false
+#     respectDoNotTrack = false
+#     useSessionStorage = false
+#   [privacy.instagram]
+#     disable = false
+#     simple = false
+#   [privacy.twitter]
+#     disable = false
+#     enableDNT = false
+#     simple = false
+#   [privacy.vimeo]
+#     disable = false
+#     simple = false
+#   [privacy.youtube]
+#     disable = false
+#     privacyEnhanced = false
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true

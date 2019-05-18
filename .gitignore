@@ -1,0 +1,9 @@
+
+# generated files by hugo
+/public/
+/resources/_gen/
+/node_modules/
+/assets/js/vendor/
+/assets/sass/vendor/
+/static/webfonts/
+/themes/

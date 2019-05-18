@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {{- partial "htmlhead.html" . -}}  
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        {{ block "pageheader" . }}
+        {{ end }}
+        </div>
+      </div>
+
+      <div class="row">
+
+        {{ block "main" . }}
+        {{ end }}
+
+        {{ block "pagefooter" . }}
+        {{ end }}
+
+      </div>
+
+    </div>
+    {{- partial "htmlfooter.html" . -}}  
+  </body>
+</html>
+

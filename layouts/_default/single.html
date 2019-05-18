@@ -1,0 +1,103 @@
+
+{{ define "pageheader" }}
+{{ partial "pageheader" . }}
+{{ end }}
+
+
+{{ define "main" }}
+
+<main aria-role="main" class="col">
+
+    <div class="single-page-header border-bottom">
+        <h1>{{.Title}}</h1>
+    </div>
+
+
+    {{ with .Page.Resources.GetMatch "header" }}
+    <figure class="header">
+        <img src="{{.RelPermalink}}" class="figure-img img-fluid rounded" alt="{{.Title}}">
+        <figcaption class="figure-caption">
+            <small>
+                Image: {{.Title}} 
+                {{ with .Params.license }}
+                    <small>(license {{.}})</small>
+                {{end}}
+            </small>
+        </figcaption>
+    </figure>
+    {{ end }}
+        
+    <div>
+        {{ with .Params.Subtitle }}
+        <p class="text-muted">{{.}}</p>
+        {{ end }}
+    
+        {{ if (or (not .PublishDate.IsZero) (not .Date.IsZero)) }}
+        <div class="m-0">
+            <small class="text-muted">
+                <i class="fas fa-clock"></i> 
+                {{ i18n "published" }}
+                {{ if not .Date.IsZero }}
+                    <time datetime="{{ $.Date.Format "2006-01-02T15:04:05-07:00" }}">{{ $.Date.Format "2 Jan, 2006" }}</time>
+                {{ else if (not .PublishDate.IsZero) }}
+                    <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+                {{ end }}
+
+                {{ if ne (.PublishDate.Format "2006-01-02") (.Lastmod.Format "2006-01-02") }}
+                <div class="ml-2">
+                    <i class="fas fa-edit"></i> {{ i18n "last-modified" }} <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>
+                </div>
+                {{ end }}
+            </small>
+        </div>
+        {{ end }}
+    </div>    
+
+    {{ partial "breadcrumbs.html" . }}
+
+
+    <div class="homepage-content">
+        {{.Content}}
+    </div>
+
+
+
+
+
+{{/*  {{ partial "author.html" . }}  */}}
+
+{{/*  {{- partial "footer.html" . -}}  */}}
+
+</main>
+</div>
+</div>
+
+
+
+
+</main>
+
+{{ end }}
+
+
+
+{{ define "pagefooter" }}
+    {{ partial "pagefooter" . }}
+{{ end }}
+
+
+{{/*  
+
+	    {{ partial "author.html" . }}
+	    {{ partial "breadcrumb.html" . }}
+
+
+{{ if (in .RawContent "mermaid")}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
+{{ end }}
+
+
+
+
+
+  */}}

@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{{- with .Site.Params.author.name -}}
+<meta name="author" content="{{.}}">
+{{ end }}
+
+{{/* NOTE: the page title (if exists), and Site's title */}}
+<title>
+    {{ block "title" . }}
+    {{ if (and .Title (ne .Title .Site.Title))}}{{ .Title }} | {{ end }}
+    {{ .Site.Title }}
+    {{ end }}
+</title>
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+
+<!-- BS4+Fontawesome5 free+Custom Styles -->
+{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed") }}
+{{ $style := resources.Get "sass/main.scss" | toCSS $options }}
+
+{{ $allstyle := $style | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $allstyle.Permalink }}" integrity="{{ $allstyle.Data.Integrity }}">
+
+{{/*
+{{ if .Site.Params.cookie_consent_info_url }}
+{{ partial "cookieconsent.html" . }}
+{{ end }}
+*/}}
+
+{{ range .AlternativeOutputFormats -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+{{ $jquery := resources.Get "js/vendor/jquery.min.js" }}
+{{ $popperjs := resources.Get "js/vendor/popper.min.js" }}
+{{ $bootstrap := resources.Get "js/vendor/bootstrap.min.js" }}
+
+{{ $js1 := slice $jquery $popperjs $bootstrap | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script defer type="text/javascript" src="{{$js1.RelPermalink}}" integrity="{{ $js1.Data.Integrity }}"></script>
+
+{{ if eq .Page.Type "search" }}
+    {{ $searchstyle := resources.Get "css/tipuesearch.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $searchstyle.Permalink }}" integrity="{{ $searchstyle.Data.Integrity }}">
+    
+    {{ $tipuesearch := resources.Get "js/vendor/tipuesearch.min.js" }}
+    {{ $tipueset := resources.Get "js/vendor/tipuesearch_set.js" }}
+    {{ $search := resources.Get "js/search.js" }}
+
+    {{ $js2 := slice $tipuesearch $tipueset $search | resources.Concat "js/search.js" | resources.Minify | resources.Fingerprint "sha512" }}
+    <script defer type="text/javascript" src="{{ .Site.BaseURL }}/js/searchindex.js"></script>
+    <script defer type="text/javascript" src="{{$js2.RelPermalink}}" integrity="{{ $js2.Data.Integrity }}"></script>
+{{ end }}

@@ -1,0 +1,13 @@
+<li>
+    <article>
+        <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
+        <br>
+        {{if .Description }}
+            {{.Description}}
+            <br>
+        {{end}}
+        <small>{{ .Date.Format "Mon, Jan 2, 2006" }}</small>
+    </article>
+</li>
+
+
