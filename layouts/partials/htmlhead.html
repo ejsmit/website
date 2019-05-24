@@ -44,8 +44,8 @@
     {{ $searchstyle := resources.Get "css/tipuesearch.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $searchstyle.Permalink }}" integrity="{{ $searchstyle.Data.Integrity }}">
     
-    {{ $tipuesearch := resources.Get "js/vendor/tipuesearch.min.js" }}
-    {{ $tipueset := resources.Get "js/vendor/tipuesearch_set.js" }}
+    {{ $tipuesearch := resources.Get "js/tipuesearch.min.js" }}
+    {{ $tipueset := resources.Get "js/tipuesearch_set.js" }}
     {{ $search := resources.Get "js/search.js" }}
 
     {{ $js2 := slice $tipuesearch $tipueset $search | resources.Concat "js/search.js" | resources.Minify | resources.Fingerprint "sha512" }}
