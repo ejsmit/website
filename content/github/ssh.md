@@ -41,3 +41,14 @@ ssh -T git@github.com
 
 Check the output. You should see something like *Hi username! You've successfully authenticated, but GitHub does not provide shell access.*
 
+## projects ssh instead of https
+
+to fix existing projects that use https use the following:
+
+```
+git remote remove origin
+git remote add origin git@github.com:user/project.git
+```
+
+The easiest is to just copy the url from the github wen interface.  That way you know it is correct
+without any typing mistakes.
