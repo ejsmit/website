@@ -75,7 +75,7 @@ serve:  modules clean ipynb
 	$(HUGO) server -D
 
 publish: build
-	@[ `git status -s | wc -l` ] && \
+	@( git status -s | wc -l ) && \
 		echo "$(ERROR_COLOR)------------------------------------------------------------------" && \
 		echo "The working directory is dirty. Please commit any pending changes." && \
 		echo "------------------------------------------------------------------$(NO_COLOR)" && /bin/false
