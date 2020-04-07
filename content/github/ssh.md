@@ -50,5 +50,5 @@ git remote remove origin
 git remote add origin git@github.com:user/project.git
 ```
 
-The easiest is to just copy the url from the github wen interface.  That way you know it is correct
+The easiest is to just copy the url from the github web interface.  That way you know it is correct
 without any typing mistakes.
