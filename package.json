@@ -6,11 +6,12 @@
     "@fortawesome/fontawesome-free": "^5.8.2",
     "bootstrap": "4.x.x",
     "jquery": "^3.4.1",
+    "mermaid": "^8.4.8",
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "postcss-cli": "^7.1.0",
-    "autoprefixer": "^9.7.0"
+    "autoprefixer": "^9.7.0",
+    "postcss-cli": "^7.1.0"
   },
   "scripts": {
     "test": ""

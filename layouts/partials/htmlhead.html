@@ -40,6 +40,17 @@
 {{ $js1 := slice $jquery $popperjs $bootstrap | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script defer type="text/javascript" src="{{$js1.RelPermalink}}" integrity="{{ $js1.Data.Integrity }}"></script>
 
+{{ if (findRE "mermaid" .Content 1) }}
+  {{ $jsm := resources.Get "js/vendor/mermaid.min.js" | fingerprint }}
+  <script defer type="application/javascript" src="{{$jsm.RelPermalink}}" integrity="{{ $jsm.Data.Integrity }}"></script>
+  <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            mermaid.initialize({startOnLoad:true});
+        });
+</script>
+{{ end }}
+
+
 {{ if eq .Page.Type "search" }}
     {{ $searchstyle := resources.Get "css/tipuesearch.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $searchstyle.Permalink }}" integrity="{{ $searchstyle.Data.Integrity }}">

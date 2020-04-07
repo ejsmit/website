@@ -65,6 +65,7 @@ resources/_gen:  node_modules
 	cp node_modules/jquery/dist/jquery.min.js $(ASSETS_JS_DIR)
 	cp node_modules/popper.js/dist/umd/popper.min.js $(ASSETS_JS_DIR)
 	cp node_modules/bootstrap/dist/js/bootstrap.min.js $(ASSETS_JS_DIR)
+	cp node_modules/mermaid/dist/mermaid.min.js $(ASSETS_JS_DIR)
 	# the output of this is irrelevant.   we just want the resources generated.
 	$(HUGO)
 
@@ -94,6 +95,7 @@ publish: build
 	$(HUGO)
 	@echo "Updating gh-pages branch"
 	cd public && git add --all && git commit -m "Publishing to gh-pages (make publish)"
+	git push origin gh-pages
 
 
 ipynb:
