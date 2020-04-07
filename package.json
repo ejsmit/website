@@ -8,7 +8,10 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "postcss-cli": "^7.1.0",
+    "autoprefixer": "^9.7.0"
+  },
   "scripts": {
     "test": ""
   },

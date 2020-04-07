@@ -53,8 +53,6 @@ modules:  node_modules resources/_gen
 
 node_modules: package.json
 	$(NPM) install
-	$(NPM) install -g postcss-cli
-	$(NPM) install -g autoprefixer
 
 resources/_gen:  node_modules 
 	mkdir -p $(ASSETS_SCSS_DIR)/fontawesome
