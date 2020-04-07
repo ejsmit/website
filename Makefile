@@ -2,7 +2,7 @@
 SHELL=/bin/bash
 
 HUGO := hugo
-NPM := npm
+NPM := yarn
 NBCONVERT := jupyter nbconvert
 
 STATIC_DIR := static/
@@ -13,13 +13,12 @@ IPYNB = $(shell find content/ -name '*.ipynb' -print)
 IPYNB2MD = $(IPYNB:%.ipynb=%.md)
 
 
-
-COM_COLOR   = \033[0;34m
-OBJ_COLOR   = \033[0;36m
-OK_COLOR    = \033[0;32m
-ERROR_COLOR = \033[0;31m
-WARN_COLOR  = \033[0;33m
-NO_COLOR    = \033[m
+COM_COLOR   = $(shell tput setaf 33)
+#OBJ_COLOR   = \033[0;36m
+OK_COLOR    = $(shell tput setaf 64)
+ERROR_COLOR = $(shell tput setaf 128)
+WARN_COLOR  = $(shell tput setaf 136)
+NO_COLOR    = $(shell tput sgr0)
 
 .PHONY = clean install
 
@@ -35,8 +34,8 @@ help:
 	@echo "$(OK_COLOR)allclean $(NO_COLOR)- delete all generated files (excl node modules)"
 	@echo "$(OK_COLOR)publish  $(NO_COLOR)- deploy site to github pages"
 	@echo ""
-	@echo "node_modules only installed if it does not exist.  Updates are" 
-	@echo "manual.  use '$(OK_COLOR)make allclean$(NO_COLOR)' after updating modules."
+	@echo "node_modules only installed if it does not exist.  Updates are completely" 
+	@echo "manual using yarn.  use '$(OK_COLOR)make allclean$(NO_COLOR)' after updating modules."
 	@echo ""
 
 clean:
