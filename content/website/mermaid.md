@@ -4,6 +4,7 @@ date: 2020-04-07
 subtitle: 'Using mermaid to draw html charts in a Hugo website'
 description: ''
 tags: [website, hugo, mermaid, charts]
+mermaid: true
 ---
 ## Shortcodes
 

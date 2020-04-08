@@ -6,7 +6,7 @@
 
 {{ define "main" }}
 
-list page
+
 <main aria-role="main" class="col">
 
     <div class="homepage-content">
@@ -14,9 +14,8 @@ list page
         {{.Content}}
     </div>
 
-    {{ range .Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
+     {{ .Render "category-card" }}
+
 
 </main>
 

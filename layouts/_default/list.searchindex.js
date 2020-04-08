@@ -3,13 +3,13 @@
 
 var tipuesearch = {"pages" : 
 
-{{- $.Scratch.Add "searchindex" slice -}}
+	{{- $.Scratch.Add "searchindex" slice -}}
 
-{{- range .Site.RegularPages -}}
-    {{- $.Scratch.Add "searchindex" (dict "title" .Title  "text" .Plain "url" .Permalink) -}}
-{{- end -}}
+	{{- range .Site.RegularPages -}}
+	    {{- $.Scratch.Add "searchindex" (dict "title" .Title  "text" .Plain "url" .Permalink) -}}
+	{{- end -}}
 
-{{- $.Scratch.Get "searchindex" | jsonify -}}
+	{{- $.Scratch.Get "searchindex" | jsonify -}}
 
 };
 

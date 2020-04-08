@@ -15,11 +15,14 @@
     </div>
 
 
-    <div class="mt-3 mb-5">
-        {{ range .Sections }}
-            {{ .Render "category-card" }}
-        {{ end }}
-    </div>
+
+    {{- if .Sections -}}
+    {{- range .Sections.ByTitle -}}
+        {{ .Render "category-card" }}
+    {{- end -}}
+    {{- end -}}
+
+
 
     <div>
         <h3>Latest Articles</h3>
@@ -30,6 +33,7 @@
         {{ end }}
         </ul>
     </div>
+
 
 </main>
 

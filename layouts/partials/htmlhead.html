@@ -40,7 +40,8 @@
 {{ $js1 := slice $jquery $popperjs $bootstrap | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script defer type="text/javascript" src="{{$js1.RelPermalink}}" integrity="{{ $js1.Data.Integrity }}"></script>
 
-{{ if (findRE "mermaid" .Content 1) }}
+
+{{ if (.Params.mermaid) }}
   {{ $jsm := resources.Get "js/vendor/mermaid.min.js" | fingerprint }}
   <script defer type="application/javascript" src="{{$jsm.RelPermalink}}" integrity="{{ $jsm.Data.Integrity }}"></script>
   <script type="application/javascript">
