@@ -8,13 +8,14 @@ NBCONVERT := jupyter nbconvert
 STATIC_DIR := static/
 ASSETS_JS_DIR := assets/js/vendor/
 ASSETS_SCSS_DIR := assets/sass/vendor/
+PUBLIC_DIR := docs/
+RESOURCES_DIR := resources/
 
 IPYNB = $(shell find content/ -name '*.ipynb' -print)
 IPYNB2MD = $(IPYNB:%.ipynb=%.md)
 
 
 COM_COLOR   = $(shell tput setaf 33)
-#OBJ_COLOR   = \033[0;36m
 OK_COLOR    = $(shell tput setaf 64)
 ERROR_COLOR = $(shell tput setaf 128)
 WARN_COLOR  = $(shell tput setaf 136)
@@ -32,18 +33,17 @@ help:
 	@echo "$(OK_COLOR)serve    $(NO_COLOR)- generate Dev website and serve using local web server"
 	@echo "$(OK_COLOR)clean    $(NO_COLOR)- delete generated webite"
 	@echo "$(OK_COLOR)allclean $(NO_COLOR)- delete all generated files (excl node modules)"
-	@echo "$(OK_COLOR)publish  $(NO_COLOR)- deploy site to github pages"
 	@echo ""
 	@echo "node_modules only installed if it does not exist.  Updates are completely" 
 	@echo "manual using yarn.  use '$(OK_COLOR)make allclean$(NO_COLOR)' after updating modules."
 	@echo ""
 
 clean:
-	rm -Rf public
+	rm -Rf $(PUBLIC_DIR)
 
 allclean: 
-	rm -Rf public
-	rm -Rf resources
+	rm -Rf $(PUBLIC_DIR)
+	rm -Rf $(RESOURCES_DIR)
 	rm -Rf $(ASSETS_SCSS_DIR)
 	rm -Rf $(ASSETS_JS_DIR)
 	rm -Rf $(STATIC_DIR)/webfonts
@@ -74,29 +74,6 @@ build:  modules clean ipynb
 
 serve:  modules clean ipynb
 	$(HUGO) server -D
-
-publish: build
-	@if [[ $$(git status -s | wc -l) -ne 0 ]]; then \
-		echo "$(ERROR_COLOR)------------------------------------------------------------------"; \
-		echo "The working directory is dirty. Please commit any pending changes."; \
-		echo "------------------------------------------------------------------$(NO_COLOR)"; \
-		exit 1;	 \
-	fi
-	@echo "Deleting old publication"
-	rm -rf public
-	mkdir public
-	git worktree prune
-	rm -rf .git/worktrees/public/
-	@echo "Checking out gh-pages branch into public"
-	git worktree add -B gh-pages public origin/gh-pages
-	@echo "Removing existing files"
-	rm -rf public/*
-	@echo "Generating site"
-	$(HUGO)
-	@echo "Updating gh-pages branch"
-	cd public && git add --all && git commit -m "Publishing to gh-pages (make publish)"
-	git push origin gh-pages
-
 
 ipynb:
 	@# activate environment in subshell and rerun make with ipynb_sub target only.
