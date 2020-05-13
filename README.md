@@ -40,5 +40,4 @@ make modules   # install node modules
 make ipynb     # convert to markdown
 make serve     # local test server, includes drafts
 make build     # build public website, excl drafts
-make publish   # deploy to github pages
 ```
