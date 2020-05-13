@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/</link>
+    <description>Recent content in Tags on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>containers</title>
+      <link>https://ejsmit.github.io/website/tags/containers/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/containers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://ejsmit.github.io/website/tags/docker/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://ejsmit.github.io/website/tags/kubernetes/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>links</title>
+      <link>https://ejsmit.github.io/website/tags/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>charts</title>
+      <link>https://ejsmit.github.io/website/tags/charts/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/charts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://ejsmit.github.io/website/tags/git/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://ejsmit.github.io/website/tags/hugo/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>https://ejsmit.github.io/website/tags/mermaid/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/mermaid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://ejsmit.github.io/website/tags/ssh/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://ejsmit.github.io/website/tags/website/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://ejsmit.github.io/website/tags/dns/</link>
+      <pubDate>Sat, 18 May 2019 19:49:11 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>https://ejsmit.github.io/website/tags/privacy/</link>
+      <pubDate>Sat, 18 May 2019 19:49:11 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/privacy/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

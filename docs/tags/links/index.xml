@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>links on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/links/</link>
+    <description>Recent content in links on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ejsmit.github.io/website/tags/links/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Links</title>
+      <link>https://ejsmit.github.io/website/containers/docker/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/containers/docker/links/</guid>
+      <description>Dockerfile  Running Docker Containers as Current Host User  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Links</title>
+      <link>https://ejsmit.github.io/website/containers/kubernetes/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/containers/kubernetes/links/</guid>
+      <description>Kubernetes Implementations  Ubuntu MicroK8s  Software Pakaging Helm.sh - The package manager for Kubernetes</description>
+    </item>
+    
+  </channel>
+</rss>

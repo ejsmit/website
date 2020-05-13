@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/containers/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/containers/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/containers/docker/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/docker/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/containers/docker/links/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/containers/kubernetes/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/kubernetes/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/containers/kubernetes/links/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/links/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/charts/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/git/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/git/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/hugo/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/mermaid/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/website/mermaid/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/ssh/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/git/ssh/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/website/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/website/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/internet/cloudflare/</loc>
+    <lastmod>2019-05-18T19:49:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/dns/</loc>
+    <lastmod>2019-05-18T19:49:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/internet/</loc>
+    <lastmod>2019-05-18T19:49:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/privacy/</loc>
+    <lastmod>2019-05-18T19:49:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/internet/links/</loc>
+    <lastmod>2019-05-18T19:37:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/about/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/git/links/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/search.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/categories/</loc>
+  </url>
+  
+</urlset>

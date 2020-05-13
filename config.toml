@@ -2,6 +2,10 @@ baseURL = "https://ejsmit.github.io/website/"
 languageCode = "en-gb"
 title = "My Notebook"
 
+# use docs instead of public for github pages
+publishDir = "docs"
+
+
 # syntax highlighting
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true

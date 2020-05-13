@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>charts on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/charts/</link>
+    <description>Recent content in charts on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ejsmit.github.io/website/tags/charts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mermaid charts</title>
+      <link>https://ejsmit.github.io/website/website/mermaid/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/website/mermaid/</guid>
+      <description>Shortcodes Mermaid charts are created using Hugo shortcodes. Here is a simple example.
+{{&amp;lt; mermaid align=&amp;#34;left&amp;#34; &amp;gt;}} graph LR Start --&amp;gt; Stop {{&amp;lt; /mermaid &amp;gt;}} graph LR Start -- Stop  See more at https://mermaid-js.github.io/mermaid/#/</description>
+    </item>
+    
+  </channel>
+</rss>

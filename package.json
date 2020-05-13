@@ -5,7 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "bootstrap": "4.x.x",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.x",
     "mermaid": "^8.4.8",
     "popper.js": "^1.15.0"
   },
