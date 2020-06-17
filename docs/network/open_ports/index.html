@@ -7,12 +7,12 @@
 
 <title>
     
-    Mermaid charts | 
+    Linux Open Ports | 
     My Notebook
     
 </title>
 
-<link rel="canonical" href="https://ejsmit.github.io/website/website/mermaid/">
+<link rel="canonical" href="https://ejsmit.github.io/website/network/open_ports/">
 
 
 
@@ -32,14 +32,6 @@
 <script defer type="text/javascript" src="/website/js/bundle.min.077ca7303b170871902ac30879eee91c31f5953a38074eade47c8bc49dc2575dbb2a22fbcf5300707fe42a1eb1302b5514d062b6d65a0978d2ede1acbb48b4f8.js" integrity="sha512-B3ynMDsXCHGQKsMIee7pHDH1lTo4B06t5HyLxJ3CV127KiL7z1MAcH/kKh6xMCtVFNBittZaCXjS7eGsu0i0&#43;A=="></script>
 
 
-
-  
-  <script defer type="application/javascript" src="/website/js/vendor/mermaid.min.9725820cc9cc799897462ed9979e2c6462989a042ce22cdc4fbfad29cf8a5019.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7&#43;tKc&#43;KUBk="></script>
-  <script type="application/javascript">
-        document.addEventListener("DOMContentLoaded", function(){
-            mermaid.initialize({startOnLoad:true});
-        });
-</script>
 
 
 
@@ -113,7 +105,7 @@
 <main aria-role="main" class="col">
 
     <div class="single-page-header border-bottom">
-        <h1>Mermaid charts</h1>
+        <h1>Linux Open Ports</h1>
     </div>
 
 
@@ -121,7 +113,7 @@
         
     <div>
         
-        <p class="text-muted">Using mermaid to draw html charts in a Hugo website</p>
+        <p class="text-muted">List the open ports, and the process that opened it</p>
         
     
         
@@ -130,7 +122,7 @@
                 <i class="fas fa-clock"></i> 
                 
                 
-                    <time datetime="2020-04-07T00:00:00&#43;00:00">7 Apr, 2020</time>
+                    <time datetime="2019-05-18T19:49:11&#43;01:00">18 May, 2019</time>
                 
 
                 
@@ -165,10 +157,10 @@
           
           itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-          <a href="https://ejsmit.github.io/website/website/"
+          <a href="https://ejsmit.github.io/website/network/"
              itemscope itemtype="http://schema.org/Thing"
              itemprop="item" >
-          <span itemprop="name">Website</span>
+          <span itemprop="name">Network</span>
           </a>
           
       
@@ -179,10 +171,10 @@
           aria-current="page"
           itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-          <a href="https://ejsmit.github.io/website/website/mermaid/"
+          <a href="https://ejsmit.github.io/website/network/open_ports/"
              itemscope itemtype="http://schema.org/Thing"
              itemprop="item" >
-          <span itemprop="name">Mermaid charts</span>
+          <span itemprop="name">Linux Open Ports</span>
           </a>
           
       
@@ -199,20 +191,23 @@
 
 
     <div class="homepage-content">
-        <h2 id="shortcodes">Shortcodes</h2>
-<p>Mermaid charts are created using Hugo shortcodes.  Here is a simple example.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{{&lt; <span style="color:#f92672">mermaid</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span> &gt;}}
-graph LR
-    Start --&gt; Stop
-{{&lt; /<span style="color:#f92672">mermaid</span> &gt;}}
-</code></pre></div><div class="mermaid" align="left">
-
-graph LR
-    Start --> Stop
-
-</div>
-
-<p>See more at <a href="https://mermaid-js.github.io/mermaid/#/">https://mermaid-js.github.io/mermaid/#/</a></p>
+        <h2 id="lsof">lsof</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo lsof -i -P -n | grep LISTEN
+</code></pre></div><ul>
+<li>-i: list open ports</li>
+<li>-P: dont convert port numbers to names</li>
+<li>-n: don&rsquo;t do reverse dns lookups</li>
+</ul>
+<h2 id="ss">ss</h2>
+<p>netstat has been deprecated.  ss is its replacement.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ss -tulpn | grep LISTEN
+</code></pre></div><ul>
+<li>-t: tcp</li>
+<li>-u: udp</li>
+<li>-l: listenng sockets</li>
+<li>-p: process id of listening process</li>
+<li>-n: don&rsquo;t do reverse dns lookups</li>
+</ul>
 
     </div>
 
