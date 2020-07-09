@@ -63,8 +63,8 @@
       <div class="post-meta">Tue, Apr 7, 2020 - 200 Words </div>
     </header>
     Creating a new key I use the names id_rsa_github and and id_rsa_github.pub for my keys, using a unique key from evey host that I need to connect from. Use a keepass long random password.
-ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; To add to the ssh agent use:
-ssh-add ~/.ssh/id_rsa_github ssh-add -L Configuring GitGub Open the user settings pagem and find SSH and GPG keys on the left. Click on ne SSH key and call it user@host, using your current username that you are using on the host you are connecting from.
+ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/id_rsa_github To add to the ssh agent use:
+gpg-connect-agent UPDATESTARTUPTTY /bye ssh-add ~/.ssh/id_rsa_github ssh-add -L Configuring GitGub Open the user settings pagem and find SSH and GPG keys on the left.
     <footer>
     <a href='https://ejsmit.github.io/website/git/ssh/'><nobr>Read more →</nobr></a>
     </footer>

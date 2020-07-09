@@ -10,12 +10,13 @@ tags: [git, ssh]
 I use the names `id_rsa_github` and `and id_rsa_github.pub` for my keys, using a unique key from evey host that I need to connect from.  Use a keepass long random password.
 
 ```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/id_rsa_github
 ```
 
 To add to the ssh agent use:
 
 ```
+gpg-connect-agent UPDATESTARTUPTTY /bye
 ssh-add  ~/.ssh/id_rsa_github
 ssh-add -L
 ```

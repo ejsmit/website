@@ -15,7 +15,7 @@ tags: [ dns, privacy]
 ## ipv4 addresses
 
 ```
-1.1.1.1
+1.1.1.1a
 1.0.0.1
 ```
 

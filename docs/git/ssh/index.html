@@ -193,9 +193,10 @@
     <div class="homepage-content">
         <h2 id="creating-a-new-key">Creating a new key</h2>
 <p>I use the names <code>id_rsa_github</code> and <code>and id_rsa_github.pub</code> for my keys, using a unique key from evey host that I need to connect from.  Use a keepass long random password.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/id_rsa_github
 </code></pre></div><p>To add to the ssh agent use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-add  ~/.ssh/id_rsa_github
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">gpg-connect-agent UPDATESTARTUPTTY /bye
+ssh-add  ~/.ssh/id_rsa_github
 ssh-add -L
 </code></pre></div><h2 id="configuring-gitgub">Configuring GitGub</h2>
 <p>Open the user settings pagem and find SSH and GPG keys on the left.   Click on ne SSH key
