@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on My Notebook</title>
+    <link>https://ejsmit.github.io/website/development/javascript/</link>
+    <description>Recent content in javascript on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ejsmit.github.io/website/development/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>create-react-app &amp; Docker</title>
+      <link>https://ejsmit.github.io/website/development/javascript/react-docker/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/development/javascript/react-docker/</guid>
+      <description>These instructions are not perfect, but they work for the small webapps I create.
+Installation npx create-react-app my-app cd my-app rm -r node_modules dockerfile.dev used to host a dev server, and run tests. Just use docker-compose up to start.
+No need to manually build container.
+FROMnode:lts-alpineRUN mkdir -p /home/node/app/node_modules \  &amp;amp;&amp;amp; chown -R node:node /home/node/appWORKDIR/home/node/appUSERnodeCOPY package.json .COPY yarn.lock .RUN yarn installCOPY --chown=node:node . .EXPOSE3000CMD [&amp;#34;yarn&amp;#34;, &amp;#34;start&amp;#34;]dockerfile Build the webapp in a temporary container, and then create a production nginx server to host the app.</description>
+    </item>
+    
+  </channel>
+</rss>

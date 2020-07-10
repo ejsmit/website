@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>
+    
+    javascript | 
+    My Notebook
+    
+</title>
+
+<link rel="canonical" href="https://ejsmit.github.io/website/tags/javascript/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ejsmit.github.io/website/css/style.min.a87a88460860414e6b3bab226cf46b9719288dec2e26d4841b256edc95e50c78.css" integrity="sha256-qHqIRghgQU5rO6sibPRrlxkojewuJtSEGyVu3JXlDHg=">
+
+
+
+<link rel="alternate" type="application/rss+xml" href="https://ejsmit.github.io/website/tags/javascript/index.xml" title="My Notebook" />
+
+
+
+
+
+<script defer type="text/javascript" src="/website/js/bundle.min.077ca7303b170871902ac30879eee91c31f5953a38074eade47c8bc49dc2575dbb2a22fbcf5300707fe42a1eb1302b5514d062b6d65a0978d2ede1acbb48b4f8.js" integrity="sha512-B3ynMDsXCHGQKsMIee7pHDH1lTo4B06t5HyLxJ3CV127KiL7z1MAcH/kKh6xMCtVFNBittZaCXjS7eGsu0i0&#43;A=="></script>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        
+        
+        </div>
+      </div>
+
+      <div class="row">
+
+        
+<main>
+  <div>
+   <h1>javascript</h1>
+   
+    
+        
+<article class="post">
+    <header>
+      <h2><a href='https://ejsmit.github.io/website/development/javascript/react-docker/'> create-react-app &amp; Docker</a> </h2>
+      <div class="post-meta">Tue, Jul 7, 2020 - 300 Words </div>
+    </header>
+    These instructions are not perfect, but they work for the small webapps I create.
+Installation npx create-react-app my-app cd my-app rm -r node_modules dockerfile.dev used to host a dev server, and run tests. Just use docker-compose up to start.
+No need to manually build container.
+FROMnode:lts-alpineRUN mkdir -p /home/node/app/node_modules \  &amp;&amp; chown -R node:node /home/node/appWORKDIR/home/node/appUSERnodeCOPY package.json .COPY yarn.lock .RUN yarn installCOPY --chown=node:node . .EXPOSE3000CMD [&#34;yarn&#34;, &#34;start&#34;]dockerfile Build the webapp in a temporary container, and then create a production nginx server to host the app.
+    <footer>
+    <a href='https://ejsmit.github.io/website/development/javascript/react-docker/'><nobr>Read more →</nobr></a>
+    </footer>
+  </article>
+  
+    
+        
+<article class="post">
+    <header>
+      <h2><a href='https://ejsmit.github.io/website/development/javascript/'> javascript</a> </h2>
+      <div class="post-meta">Wed, Apr 8, 2020 - 100 Words </div>
+    </header>
+    
+    <footer>
+    <a href='https://ejsmit.github.io/website/development/javascript/'><nobr>Read more →</nobr></a>
+    </footer>
+  </article>
+  
+    
+  </div>
+</main>
+
+
+        
+        
+
+      </div>
+
+    </div>
+</body>
+</html>
+

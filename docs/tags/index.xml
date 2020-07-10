@@ -6,10 +6,73 @@
     <description>Recent content in Tags on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate>
     
 	<atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux</title>
+      <link>https://ejsmit.github.io/website/tags/linux/</link>
+      <pubDate>Fri, 10 Jul 2020 17:41:19 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://ejsmit.github.io/website/tags/tmux/</link>
+      <pubDate>Fri, 10 Jul 2020 17:41:19 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://ejsmit.github.io/website/tags/docker/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://ejsmit.github.io/website/tags/javascript/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://ejsmit.github.io/website/tags/react/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://ejsmit.github.io/website/tags/python/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtualenv</title>
+      <link>https://ejsmit.github.io/website/tags/virtualenv/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/virtualenv/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>containers</title>
@@ -21,11 +84,29 @@
     </item>
     
     <item>
-      <title>docker</title>
-      <link>https://ejsmit.github.io/website/tags/docker/</link>
+      <title>development</title>
+      <link>https://ejsmit.github.io/website/tags/development/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ejsmit.github.io/website/tags/docker/</guid>
+      <guid>https://ejsmit.github.io/website/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://ejsmit.github.io/website/tags/git/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internet</title>
+      <link>https://ejsmit.github.io/website/tags/internet/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/internet/</guid>
       <description></description>
     </item>
     
@@ -48,20 +129,20 @@
     </item>
     
     <item>
+      <title>website</title>
+      <link>https://ejsmit.github.io/website/tags/website/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>charts</title>
       <link>https://ejsmit.github.io/website/tags/charts/</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/tags/charts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://ejsmit.github.io/website/tags/git/</link>
-      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/tags/git/</guid>
       <description></description>
     </item>
     
@@ -93,29 +174,11 @@
     </item>
     
     <item>
-      <title>website</title>
-      <link>https://ejsmit.github.io/website/tags/website/</link>
-      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/tags/website/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dns</title>
       <link>https://ejsmit.github.io/website/tags/dns/</link>
       <pubDate>Sat, 18 May 2019 19:49:11 +0100</pubDate>
       
       <guid>https://ejsmit.github.io/website/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://ejsmit.github.io/website/tags/linux/</link>
-      <pubDate>Sat, 18 May 2019 19:49:11 +0100</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/tags/linux/</guid>
       <description></description>
     </item>
     

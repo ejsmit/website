@@ -12,12 +12,22 @@
     
     
     <item>
+      <title>Docker &amp; create-react-app</title>
+      <link>https://ejsmit.github.io/website/containers/docker/react-docker/</link>
+      <pubDate>Thu, 09 Jul 2020 19:35:51 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/containers/docker/react-docker/</guid>
+      <description>CONTENT NOT RENDERED
+Only insert details here if you want to enter any additional detail about the purpose of the redirect, otherwise you can just leave this portion of your file blank.</description>
+    </item>
+    
+    <item>
       <title>Docker Links</title>
       <link>https://ejsmit.github.io/website/containers/docker/links/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/containers/docker/links/</guid>
-      <description>Dockerfile  Running Docker Containers as Current Host User  </description>
+      <description>Dockerfile  Running Docker Containers as Current Host User  https://containo.us/blog/traefik-2-tls-101-23b4fbee81f1/</description>
     </item>
     
   </channel>

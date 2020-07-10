@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>
+    
+    create-react-app &amp; Docker | 
+    My Notebook
+    
+</title>
+
+<link rel="canonical" href="https://ejsmit.github.io/website/development/javascript/react-docker/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ejsmit.github.io/website/css/style.min.a87a88460860414e6b3bab226cf46b9719288dec2e26d4841b256edc95e50c78.css" integrity="sha256-qHqIRghgQU5rO6sibPRrlxkojewuJtSEGyVu3JXlDHg=">
+
+
+
+
+
+
+
+
+<script defer type="text/javascript" src="/website/js/bundle.min.077ca7303b170871902ac30879eee91c31f5953a38074eade47c8bc49dc2575dbb2a22fbcf5300707fe42a1eb1302b5514d062b6d65a0978d2ede1acbb48b4f8.js" integrity="sha512-B3ynMDsXCHGQKsMIee7pHDH1lTo4B06t5HyLxJ3CV127KiL7z1MAcH/kKh6xMCtVFNBittZaCXjS7eGsu0i0&#43;A=="></script>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+    <span class="navbar-brand">My Notebook</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://ejsmit.github.io/website/">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/linux/">Linux</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/containers/">Containers</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/development/">Development</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/git/">Git</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/internet/">Internet</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/website/">Website</a>
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/network/">Network</a>
+                    
+                </div>
+            </li>
+
+        </ul>
+
+        
+        
+        <form class="form-inline my-2 my-lg-0" method="get" action="https://ejsmit.github.io/website/search.html">
+            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        
+
+    </div>
+
+</nav>
+
+
+
+        </div>
+      </div>
+
+      <div class="row">
+
+        
+
+<main aria-role="main" class="col">
+
+    <div class="single-page-header border-bottom">
+        <h1>create-react-app &amp; Docker</h1>
+    </div>
+
+
+    
+        
+    <div>
+        
+        <p class="text-muted">how to dockerise a new react app</p>
+        
+    
+        
+        <div class="m-0">
+            <small class="text-muted">
+                <i class="fas fa-clock"></i> 
+                
+                
+                    <time datetime="2020-07-07T00:00:00&#43;00:00">7 Jul, 2020</time>
+                
+
+                
+            </small>
+        </div>
+        
+    </div>    
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            
+      
+      
+      
+      
+      
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">My Notebook</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/development/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">Development</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/development/javascript/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">javascript</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item  active"
+          aria-current="page"
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/development/javascript/react-docker/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">create-react-app &amp; Docker</span>
+          </a>
+          
+      
+      </li>
+      
+        </ol>
+      </nav>
+      
+      <ol  class="nav navbar-nav">
+        
+      </ol>
+      
+      
+
+
+    <div class="homepage-content">
+        <p>These instructions are not perfect, but they work for the small webapps I create.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx create-react-app my-app
+<span style="color:#204a87">cd</span> my-app
+rm -r node_modules
+</code></pre></div><h2 id="dockerfiledev">dockerfile.dev</h2>
+<p>used to host a dev server, and run tests.   Just use <code>docker-compose up</code> to start.<br>
+No need to manually build container.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> node:lts-alpine</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> mkdir -p /home/node/app/node_modules <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> chown -R node:node /home/node/app<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /home/node/app</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">USER</span><span style="color:#4e9a06"> node</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> package.json .<span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> yarn.lock .<span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> yarn install<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> --chown<span style="color:#ce5c00;font-weight:bold">=</span>node:node . .<span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">EXPOSE</span><span style="color:#4e9a06"> 3000</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">CMD</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;yarn&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;start&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></code></pre></div><h2 id="dockerfile">dockerfile</h2>
+<p>Build the webapp in a temporary container, and then create a production <code>nginx</code> server to
+host the app.  Should be ready to deploy anywhere.   Build using <code>docker build -t webapp .</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> node:lts-alpine as builder</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /app</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> package.json .<span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> yarn.lock .<span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> yarn install --production<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> . .<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> yarn build<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> nginx:alpine</span><span style="color:#a40000">
+</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> --from<span style="color:#ce5c00;font-weight:bold">=</span>builder /app/build /usr/share/nginx/html<span style="color:#a40000">
+</span><span style="color:#a40000">
+</span></code></pre></div><h2 id="dockerignore">.dockerignore</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">node_modules
+</code></pre></div><h2 id="docker-composeyml">docker-compose.yml</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;3&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">services</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">web</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> 
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">build</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> 
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">context</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>.<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">dockerfile</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Dockerfile.dev<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> 
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- <span style="color:#4e9a06">&#34;3000:3000&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">volumes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- .<span style="color:#000;font-weight:bold">:</span>/home/node/app<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- node_modules<span style="color:#000;font-weight:bold">:</span>/home/node/app/node_modules<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">environment</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- CI=<span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">tests</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">build</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> 
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">context</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>.<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">dockerfile</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Dockerfile.dev<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">depends_on</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- web<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">volumes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- .<span style="color:#000;font-weight:bold">:</span>/home/node/app<span style="color:#000;font-weight:bold">:</span>ro<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- node_modules<span style="color:#000;font-weight:bold">:</span>/home/node/app/node_modules<span style="color:#000;font-weight:bold">:</span>ro<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">command</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;yarn&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;test&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">volumes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">node_modules</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="other">Other</h2>
+<p>Install and run <code>tmux</code>, and then run splitlogs.py inside tmux</p>
+<h3 id="splitlogspy">splitlogs.py</h3>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#8f5902;font-style:italic">#!/usr/bin/python3</span>
+
+<span style="color:#8f5902;font-style:italic"># Requires pyyaml</span>
+
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">os</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">yaml</span>
+
+<span style="color:#000">run</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">os</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">system</span>
+<span style="color:#000">new_window</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">lambda</span> <span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;tmux new-window -n &#34;logs&#34; &#34;{}&#34;&#39;</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">))</span>
+<span style="color:#000">split_vertical</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">lambda</span> <span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;tmux split-window &#34;{}&#34;&#39;</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">))</span>
+<span style="color:#000">split_horizontal</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">lambda</span> <span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;tmux split-window -h &#34;{}&#34;&#39;</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cmd</span><span style="color:#000;font-weight:bold">))</span>
+<span style="color:#000">even_vertical</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">lambda</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;tmux select-layout even-vertical&#39;</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">__name__</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#39;__main__&#39;</span><span style="color:#000;font-weight:bold">:</span>
+    <span style="color:#204a87;font-weight:bold">try</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#000">config_text</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;docker-compose.yaml&#39;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">()</span>
+    <span style="color:#204a87;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">IOError</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#000">config_text</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;docker-compose.yml&#39;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">()</span>
+
+    <span style="color:#000">config</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">yaml</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">load</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">config_text</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Loader</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">yaml</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">SafeLoader</span><span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#000">services</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">list</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">config</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;services&#39;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">keys</span><span style="color:#000;font-weight:bold">())</span>
+    <span style="color:#204a87;font-weight:bold">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">services</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#000">new_window</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;docker-compose logs -f {}&#39;</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">services</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]))</span>
+
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">service</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">services</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">:]:</span>
+        <span style="color:#000">split_horizontal</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;docker-compose logs -f {}&#39;</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">service</span><span style="color:#000;font-weight:bold">))</span>
+
+    <span style="color:#000">even_vertical</span><span style="color:#000;font-weight:bold">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+</div>
+
+
+
+
+</main>
+
+
+
+        
+    <footer class="container-fluid site-footer py-3">
+    <div class="container">
+        <p class="text-muted border-bottom text-center py-3">
+            
+        </p>
+    
+        <div class="text-center justify-content-between align-items-center mt-5">
+            <h2 class="footer-heading text-muted">My Notebook</h2><div class="text-muted"> This is a repository for my own personal use.  The information 
+      on this site may not work outside of my own environment.  You have been warned....</div><ul class="footer-nav px-0">
+            <li>
+                <i class="fa fa-keyboard-o" aria-hidden="true"></i> <a href="" rel="author"></a>
+            </li>
+    
+            
+            </ul>
+    
+        </div>
+        </div>
+        <div class="si-license">
+        <div class="text-muted text-sm-center">
+          <!-- raw HTML omitted -->© ejsmit 2019<!-- raw HTML omitted --> &middot; 
+        </div>
+      </div>
+      
+    </footer>
+
+    
+    
+
+
+      </div>
+
+    </div>
+</body>
+</html>
+

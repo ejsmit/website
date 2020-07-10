@@ -17,7 +17,25 @@
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/containers/docker/links/</guid>
-      <description>Dockerfile  Running Docker Containers as Current Host User  </description>
+      <description>Dockerfile  Running Docker Containers as Current Host User  https://containo.us/blog/traefik-2-tls-101-23b4fbee81f1/</description>
+    </item>
+    
+    <item>
+      <title>Git Links</title>
+      <link>https://ejsmit.github.io/website/git/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/git/links/</guid>
+      <description>merging  How to make Git preserve specific files while merging  </description>
+    </item>
+    
+    <item>
+      <title>Internet Links</title>
+      <link>https://ejsmit.github.io/website/internet/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/internet/links/</guid>
+      <description>None</description>
     </item>
     
     <item>
@@ -27,6 +45,15 @@
       
       <guid>https://ejsmit.github.io/website/containers/kubernetes/links/</guid>
       <description>Kubernetes Implementations  Ubuntu MicroK8s  Software Pakaging Helm.sh - The package manager for Kubernetes</description>
+    </item>
+    
+    <item>
+      <title>Website Links</title>
+      <link>https://ejsmit.github.io/website/website/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/website/links/</guid>
+      <description>Misc  Color picker  </description>
     </item>
     
   </channel>

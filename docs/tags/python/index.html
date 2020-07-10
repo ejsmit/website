@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>
+    
+    python | 
+    My Notebook
+    
+</title>
+
+<link rel="canonical" href="https://ejsmit.github.io/website/tags/python/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ejsmit.github.io/website/css/style.min.a87a88460860414e6b3bab226cf46b9719288dec2e26d4841b256edc95e50c78.css" integrity="sha256-qHqIRghgQU5rO6sibPRrlxkojewuJtSEGyVu3JXlDHg=">
+
+
+
+<link rel="alternate" type="application/rss+xml" href="https://ejsmit.github.io/website/tags/python/index.xml" title="My Notebook" />
+
+
+
+
+
+<script defer type="text/javascript" src="/website/js/bundle.min.077ca7303b170871902ac30879eee91c31f5953a38074eade47c8bc49dc2575dbb2a22fbcf5300707fe42a1eb1302b5514d062b6d65a0978d2ede1acbb48b4f8.js" integrity="sha512-B3ynMDsXCHGQKsMIee7pHDH1lTo4B06t5HyLxJ3CV127KiL7z1MAcH/kKh6xMCtVFNBittZaCXjS7eGsu0i0&#43;A=="></script>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        
+        
+        </div>
+      </div>
+
+      <div class="row">
+
+        
+<main>
+  <div>
+   <h1>python</h1>
+   
+    
+        
+<article class="post">
+    <header>
+      <h2><a href='https://ejsmit.github.io/website/development/python/virtualenv-docker/'> Using dockerfiles with a python virtualenv</a> </h2>
+      <div class="post-meta">Sun, Jun 7, 2020 - 200 Words </div>
+    </header>
+    Why a virtualenv in a container? Normally not needed as the container image itself is already a new clean environment. But I needed a multi-stage build where the python env should be created inside the builder and then copied over to the final image.
+A virtualenv gives a single directory with all of its dependencies that is easy to copy
+Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 -m venv $VIRTUAL_ENV ENV PATH=&#34;$VIRTUAL_ENV/bin:$PATH&#34; # Install dependencies: COPY requirements.
+    <footer>
+    <a href='https://ejsmit.github.io/website/development/python/virtualenv-docker/'><nobr>Read more →</nobr></a>
+    </footer>
+  </article>
+  
+    
+        
+<article class="post">
+    <header>
+      <h2><a href='https://ejsmit.github.io/website/development/python/'> python</a> </h2>
+      <div class="post-meta">Wed, Apr 8, 2020 - 100 Words </div>
+    </header>
+    
+    <footer>
+    <a href='https://ejsmit.github.io/website/development/python/'><nobr>Read more →</nobr></a>
+    </footer>
+  </article>
+  
+    
+  </div>
+</main>
+
+
+        
+        
+
+      </div>
+
+    </div>
+</body>
+</html>
+

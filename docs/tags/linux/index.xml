@@ -6,10 +6,27 @@
     <description>Recent content in linux on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 18 May 2019 19:49:11 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate>
     
 	<atom:link href="https://ejsmit.github.io/website/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tmux cheatsheet</title>
+      <link>https://ejsmit.github.io/website/linux/tmux-cheatsheet/</link>
+      <pubDate>Fri, 10 Jul 2020 17:41:19 +0100</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/linux/tmux-cheatsheet/</guid>
+      <description>Default Prefix Default prefix is Ctrl-b.
+Windows tmux new-window tmux neww tmux neww -n windowname tmux new -s sessionname -n windowname prefix c
+create new window
+prefix , rename window
+prefix n|p and prefix Ctrl n|Ctrl p
+go to next/previous window
+prefix 1|2&amp;hellip; go to window #
+Panes prefix v|h vertical or horisontal pane split
+prefix spacebar cycle through default pane layouts. Default layout splits panes evenly. Use this to quickly make one big and one small pane.</description>
+    </item>
     
     <item>
       <title>Linux Open Ports</title>

@@ -6,10 +6,33 @@
     <description>Recent content in docker on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ejsmit.github.io/website/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>create-react-app &amp; Docker</title>
+      <link>https://ejsmit.github.io/website/development/javascript/react-docker/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/development/javascript/react-docker/</guid>
+      <description>These instructions are not perfect, but they work for the small webapps I create.
+Installation npx create-react-app my-app cd my-app rm -r node_modules dockerfile.dev used to host a dev server, and run tests. Just use docker-compose up to start.
+No need to manually build container.
+FROMnode:lts-alpineRUN mkdir -p /home/node/app/node_modules \  &amp;amp;&amp;amp; chown -R node:node /home/node/appWORKDIR/home/node/appUSERnodeCOPY package.json .COPY yarn.lock .RUN yarn installCOPY --chown=node:node . .EXPOSE3000CMD [&amp;#34;yarn&amp;#34;, &amp;#34;start&amp;#34;]dockerfile Build the webapp in a temporary container, and then create a production nginx server to host the app.</description>
+    </item>
+    
+    <item>
+      <title>Using dockerfiles with a python virtualenv</title>
+      <link>https://ejsmit.github.io/website/development/python/virtualenv-docker/</link>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/development/python/virtualenv-docker/</guid>
+      <description>Why a virtualenv in a container? Normally not needed as the container image itself is already a new clean environment. But I needed a multi-stage build where the python env should be created inside the builder and then copied over to the final image.
+A virtualenv gives a single directory with all of its dependencies that is easy to copy
+Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 -m venv $VIRTUAL_ENV ENV PATH=&amp;#34;$VIRTUAL_ENV/bin:$PATH&amp;#34; # Install dependencies: COPY requirements.</description>
+    </item>
     
     <item>
       <title>Docker</title>
@@ -26,7 +49,7 @@
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/containers/docker/links/</guid>
-      <description>Dockerfile  Running Docker Containers as Current Host User  </description>
+      <description>Dockerfile  Running Docker Containers as Current Host User  https://containo.us/blog/traefik-2-tls-101-23b4fbee81f1/</description>
     </item>
     
     <item>
