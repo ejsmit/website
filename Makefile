@@ -31,6 +31,7 @@ help:
 	@echo "$(OK_COLOR)modules  $(NO_COLOR)- install node modules and web assets"
 	@echo "$(OK_COLOR)build    $(NO_COLOR)- generate Prod website"
 	@echo "$(OK_COLOR)serve    $(NO_COLOR)- generate Dev website and serve using local web server"
+	@echo "$(OK_COLOR)preview  $(NO_COLOR)- generate Prod website and serve using local web server"
 	@echo "$(OK_COLOR)clean    $(NO_COLOR)- delete generated webite"
 	@echo "$(OK_COLOR)allclean $(NO_COLOR)- delete all generated files (excl node modules)"
 	@echo ""
@@ -74,6 +75,9 @@ build:  modules clean ipynb
 
 serve:  modules clean ipynb
 	$(HUGO) server -D
+
+preview:  modules clean ipynb
+	$(HUGO) server
 
 ipynb:
 	@# activate environment in subshell and rerun make with ipynb_sub target only.

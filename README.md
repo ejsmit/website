@@ -39,5 +39,6 @@ make allclean  # delete public website, generated assets, converted ipynb files.
 make modules   # install node modules
 make ipynb     # convert to markdown
 make serve     # local test server, includes drafts
-make build     # build public website, excl drafts
+make preview   # local test server, excludes drafts
+make build     # build public website, excludes drafts
 ```

@@ -6,10 +6,6 @@ title = "My Notebook"
 publishDir = "docs"
 
 
-# syntax highlighting
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-
 pluralizelisttitles = false
 ignoreFiles = [ "\\.ipynb$" ]
 
@@ -26,7 +22,17 @@ home = ["HTML", "RSS", "searchindex"]
   path = "js"
 
 
-
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "tango"
+    tabWidth = 4
 
 
 [params]

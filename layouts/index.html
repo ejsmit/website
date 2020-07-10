@@ -28,7 +28,7 @@
         <h3>Latest Articles</h3>
         <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
         <ul>
-        {{ range first 5 .Pages }}
+        {{ range first 5 .Site.AllPages }}
             {{ .Render "li-with-description"}}
         {{ end }}
         </ul>
