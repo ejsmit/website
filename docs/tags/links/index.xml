@@ -6,11 +6,7 @@
     <description>Recent content in links on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://ejsmit.github.io/website/tags/links/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/links/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Links</title>
       <link>https://ejsmit.github.io/website/containers/docker/links/</link>

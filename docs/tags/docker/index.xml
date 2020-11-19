@@ -6,11 +6,7 @@
     <description>Recent content in docker on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://ejsmit.github.io/website/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>create-react-app &amp; Docker</title>
       <link>https://ejsmit.github.io/website/development/javascript/react-docker/</link>
@@ -25,10 +21,10 @@ FROMnode:lts-alpineRUN mkdir -p /home/node/app/node_modules \  &amp;amp;&amp;amp
     
     <item>
       <title>Using dockerfiles with a python virtualenv</title>
-      <link>https://ejsmit.github.io/website/development/python/virtualenv-docker/</link>
+      <link>https://ejsmit.github.io/website/python/virtualenv-docker/</link>
       <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ejsmit.github.io/website/development/python/virtualenv-docker/</guid>
+      <guid>https://ejsmit.github.io/website/python/virtualenv-docker/</guid>
       <description>Why a virtualenv in a container? Normally not needed as the container image itself is already a new clean environment. But I needed a multi-stage build where the python env should be created inside the builder and then copied over to the final image.
 A virtualenv gives a single directory with all of its dependencies that is easy to copy
 Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 -m venv $VIRTUAL_ENV ENV PATH=&amp;#34;$VIRTUAL_ENV/bin:$PATH&amp;#34; # Install dependencies: COPY requirements.</description>

@@ -6,11 +6,7 @@
     <description>Recent content in hugo on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://ejsmit.github.io/website/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mermaid charts</title>
       <link>https://ejsmit.github.io/website/website/mermaid/</link>

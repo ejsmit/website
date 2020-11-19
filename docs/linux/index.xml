@@ -6,11 +6,7 @@
     <description>Recent content in Linux on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate>
-    
-	<atom:link href="https://ejsmit.github.io/website/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate><atom:link href="https://ejsmit.github.io/website/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tmux cheatsheet</title>
       <link>https://ejsmit.github.io/website/linux/tmux-cheatsheet/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in Tags on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate>
-    
-	<atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jul 2020 17:41:19 +0100</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://ejsmit.github.io/website/tags/linux/</link>
