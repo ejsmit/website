@@ -23,7 +23,7 @@ NO_COLOR    = $(shell tput sgr0)
 
 .PHONY = clean install
 
-help: 
+help:
 	@echo "$(WARN_COLOR)"
 	@echo "Website Makefile"
 	@echo "----------------"
@@ -35,14 +35,14 @@ help:
 	@echo "$(OK_COLOR)clean    $(NO_COLOR)- delete generated webite"
 	@echo "$(OK_COLOR)allclean $(NO_COLOR)- delete all generated files (excl node modules)"
 	@echo ""
-	@echo "node_modules only installed if it does not exist.  Updates are completely" 
+	@echo "node_modules only installed if it does not exist.  Updates are completely"
 	@echo "manual using yarn.  use '$(OK_COLOR)make allclean$(NO_COLOR)' after updating modules."
 	@echo ""
 
 clean:
 	rm -Rf $(PUBLIC_DIR)
 
-allclean: 
+allclean:
 	rm -Rf $(PUBLIC_DIR)
 	rm -Rf $(RESOURCES_DIR)
 	rm -Rf $(ASSETS_SCSS_DIR)
@@ -52,10 +52,10 @@ allclean:
 
 modules:  node_modules resources/_gen
 
-node_modules: package.json
+node_modules: package.json yarn.lock
 	$(NPM) install
 
-resources/_gen:  node_modules 
+resources/_gen:  node_modules
 	mkdir -p $(ASSETS_SCSS_DIR)/fontawesome
 	mkdir -p $(ASSETS_SCSS_DIR)/bootstrap/
 	mkdir -p $(STATIC_DIR)/webfonts
@@ -81,7 +81,7 @@ preview:  modules clean ipynb
 
 ipynb:
 	@# activate environment in subshell and rerun make with ipynb_sub target only.
-	source $(shell conda info --base)/etc/profile.d/conda.sh && conda activate website && $(MAKE) ipynb_sub 
+	source $(shell conda info --base)/etc/profile.d/conda.sh && conda activate website && $(MAKE) ipynb_sub
 
 ipynb_sub: $(IPYNB2MD)
 
