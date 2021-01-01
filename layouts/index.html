@@ -18,7 +18,9 @@
 
     {{- if .Sections -}}
     {{- range .Sections.ByTitle -}}
-        {{ .Render "category-card" }}
+        {{- if not (eq .Section "posts") -}}
+            {{ .Render "category-card" }}
+        {{- end -}}
     {{- end -}}
     {{- end -}}
 

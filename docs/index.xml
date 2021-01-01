@@ -6,7 +6,17 @@
     <description>Recent content on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 19 Nov 2020 15:28:53 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 January 2021</title>
+      <link>https://ejsmit.github.io/website/posts/2021/01/01/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/posts/2021/01/01/</guid>
+      <description>Starting a new blog today to chronicle my progress in getting up to speed on machine learning. I am not new to ML and I am already very familiar with many libraries, tools, and even some of the maths behind it, but a refresher on some of the basics would still be useful.
+Had to update my website to add a new blog section, and some templates to make the blog work, including the section list and the navigation bar.</description>
+    </item>
+    
     <item>
       <title>Install with conda</title>
       <link>https://ejsmit.github.io/website/r/install_with_conda/</link>
