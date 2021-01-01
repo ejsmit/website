@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ejsmit.github.io/website/r/install_with_conda/</loc>
-    <lastmod>2020-11-19T15:28:53+00:00</lastmod>
+    <loc>https://ejsmit.github.io/website/posts/2021/01/01/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/daily/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ejsmit.github.io/website/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/posts/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/tags/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ejsmit.github.io/website/r/install_with_conda/</loc>
     <lastmod>2020-11-19T15:28:53+00:00</lastmod>
   </url>
   
@@ -24,11 +44,6 @@
   
   <url>
     <loc>https://ejsmit.github.io/website/tags/linux/</loc>
-    <lastmod>2020-07-10T17:41:19+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ejsmit.github.io/website/tags/</loc>
     <lastmod>2020-07-10T17:41:19+01:00</lastmod>
   </url>
   

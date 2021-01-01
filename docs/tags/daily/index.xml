@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>daily on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/daily/</link>
+    <description>Recent content in daily on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 January 2021</title>
+      <link>https://ejsmit.github.io/website/posts/2021/01/01/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/posts/2021/01/01/</guid>
+      <description>Starting a new blog today to chronicle my progress in getting up to speed on machine learning. I am not new to ML and I am already very familiar with many libraries, tools, and even some of the maths behind it, but a refresher on some of the basics would still be useful.
+Had to update my website to add a new blog section, and some templates to make the blog work, including the section list and the navigation bar.</description>
+    </item>
+    
+  </channel>
+</rss>
