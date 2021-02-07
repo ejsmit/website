@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>
+    
+    SimpleImputer: Imputing missing values | 
+    My Notebook
+    
+</title>
+
+<link rel="canonical" href="https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ejsmit.github.io/website/css/style.min.7196c23745431c2198f77ea12699adb5a770872f9ea386cd55ba3d210ea839b7.css" integrity="sha256-cZbCN0VDHCGY936hJpmttadwhy&#43;eo4bNVbo9IQ6oObc=">
+
+
+
+
+
+
+
+
+<script defer type="text/javascript" src="/website/js/bundle.min.b8391dee448990fa509f3c3891cdf4debe1a3b8b6223561acc400a46f1df929f79f75e35d1abcbf06828291c45a725e0fca1bddd9a01ca1cad8a4807e0ab3d18.js" integrity="sha512-uDkd7kSJkPpQnzw4kc303r4aO4tiI1YazEAKRvHfkp9591410avL8GgoKRxFpyXg/KG93ZoByhytikgH4Ks9GA=="></script>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+    <span class="navbar-brand">My Notebook</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://ejsmit.github.io/website/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="https://ejsmit.github.io/website/posts/">Blog</a>
+            </li>
+            
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/linux/">Linux</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/windows/">Windows</a>
+                    
+                    
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/python/">Python</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/containers/">Containers</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/development/">Development</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/git/">Git</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/internet/">Internet</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/ml/">Machine Learning</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/mlsupervised/">Machine Learning - Supervised</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/mlunsupervised/">Machine Learning - Unsupervised</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/website/">Website</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/network/">Network</a>
+                    
+                    
+                </div>
+            </li>
+
+        </ul>
+
+        
+        
+        <form class="form-inline my-2 my-lg-0" method="get" action="https://ejsmit.github.io/website/search.html">
+            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        
+
+    </div>
+
+</nav>
+
+
+
+        </div>
+      </div>
+
+      <div class="row">
+
+        
+
+<main aria-role="main" class="col">
+
+    <div class="single-page-header border-bottom">
+        <h1>SimpleImputer: Imputing missing values</h1>
+    </div>
+
+
+    
+        
+    <div>
+        
+    
+        
+        <div class="m-0">
+            <small class="text-muted">
+                <i class="fas fa-clock"></i> 
+                
+                
+                    <time datetime="2020-12-04T00:00:00&#43;00:00">4 Dec, 2020</time>
+                
+
+                
+            </small>
+        </div>
+        
+    </div>    
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            
+      
+      
+      
+      
+      
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">My Notebook</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/ml/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">Machine Learning</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/ml/preprocessing/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">Preprocessing</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item  active"
+          aria-current="page"
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">SimpleImputer: Imputing missing values</span>
+          </a>
+          
+      
+      </li>
+      
+        </ol>
+      </nav>
+      
+      <ol  class="nav navbar-nav">
+        
+      </ol>
+      
+      
+
+
+    <div class="homepage-content">
+        <p>Replace blanks, NaNs or other placeholders with numerical values. Machine learning usually expects all data to be in arrays without any missing values. One strategy is to delete all rows with missing data, but this is especially bad in small datasets.  A better solution is to infer the values from the data that is present.</p>
+<h2 id="sklearnimputesimpleimputer">sklearn.impute.SimpleImputer</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sklearn.impute.SimpleImputer(missing_values=nan, strategy=&#39;mean&#39;, fill_value=None)
+</code></pre></div><h3 id="data">data</h3>
+<p>works with anything that <code>numpy.asarray</code> can convert to a matrix, including pandas dataframes.</p>
+<h3 id="strategy">strategy</h3>
+<ul>
+<li><code>mean</code> (numeric) (default)</li>
+<li><code>median</code> (numeric)</li>
+<li><code>most_frequent</code> (string or numeric)</li>
+<li><code>constant</code> (string or numeric) requires <code>fill_value</code></li>
+</ul>
+<h3 id="missing_values">missing_values</h3>
+<ul>
+<li><code>np.nan</code> (default)</li>
+<li><code>number</code></li>
+<li><code>None</code></li>
+</ul>
+<p>Support strings or pandas categories with <code>most_frequent</code> or <code>constant</code> strategies</p>
+<h3 id="methods">Methods</h3>
+<ul>
+<li><code>fit(X)</code> returns SimpleImputer</li>
+<li><code>transform(X)</code> returns transformed array</li>
+<li><code>fit_transform(X)</code> returns transformed array</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">numpy</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">np</span>
+<span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">sklearn.impute</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">SimpleImputer</span>
+
+<span style="color:#000">X</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">np</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">array</span><span style="color:#000;font-weight:bold">([[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">np</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">nan</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">]])</span>
+<span style="color:#000">X</span>
+</code></pre></div><pre><code>array([[ 1.,  2.],
+       [nan,  3.],
+       [ 7.,  6.]])
+</code></pre>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000">imputer</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SimpleImputer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">missing_values</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">np</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">nan</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">strategy</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;mean&#39;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">X</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">imputer</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">fit_transform</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">X</span>
+</code></pre></div><pre><code>array([[1., 2.],
+       [4., 3.],
+       [7., 6.]])
+</code></pre>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+</div>
+
+
+
+
+</main>
+
+
+
+        
+    <footer class="container-fluid site-footer py-3">
+    <div class="container">
+        <p class="text-muted border-bottom text-center py-3">
+            
+        </p>
+    
+        <div class="text-center justify-content-between align-items-center mt-5">
+            <h2 class="footer-heading text-muted">My Notebook</h2><div class="text-muted"> This is a repository for my own personal use.  The information 
+      on this site may not work outside of my own environment.  You have been warned....</div><ul class="footer-nav px-0">
+            <li>
+                <i class="fa fa-keyboard-o" aria-hidden="true"></i> <a href="" rel="author"></a>
+            </li>
+    
+            
+            </ul>
+    
+        </div>
+        </div>
+        <div class="si-license">
+        <div class="text-muted text-sm-center">
+          <!-- raw HTML omitted -->© ejsmit 2019<!-- raw HTML omitted --> &middot; 
+        </div>
+      </div>
+      
+    </footer>
+
+    
+    
+
+
+      </div>
+
+    </div>
+</body>
+</html>
+

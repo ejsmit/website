@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>
+    
+    SSH using certificates from a local CA | 
+    My Notebook
+    
+</title>
+
+<link rel="canonical" href="https://ejsmit.github.io/website/linux/ssh-certs-ca/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ejsmit.github.io/website/css/style.min.7196c23745431c2198f77ea12699adb5a770872f9ea386cd55ba3d210ea839b7.css" integrity="sha256-cZbCN0VDHCGY936hJpmttadwhy&#43;eo4bNVbo9IQ6oObc=">
+
+
+
+
+
+
+
+
+<script defer type="text/javascript" src="/website/js/bundle.min.b8391dee448990fa509f3c3891cdf4debe1a3b8b6223561acc400a46f1df929f79f75e35d1abcbf06828291c45a725e0fca1bddd9a01ca1cad8a4807e0ab3d18.js" integrity="sha512-uDkd7kSJkPpQnzw4kc303r4aO4tiI1YazEAKRvHfkp9591410avL8GgoKRxFpyXg/KG93ZoByhytikgH4Ks9GA=="></script>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+    <span class="navbar-brand">My Notebook</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://ejsmit.github.io/website/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="https://ejsmit.github.io/website/posts/">Blog</a>
+            </li>
+            
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/linux/">Linux</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/windows/">Windows</a>
+                    
+                    
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/python/">Python</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/containers/">Containers</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/development/">Development</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/git/">Git</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/internet/">Internet</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/ml/">Machine Learning</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/mlsupervised/">Machine Learning - Supervised</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/mlunsupervised/">Machine Learning - Unsupervised</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/website/">Website</a>
+                    
+                    
+                    
+                    <a class="dropdown-item" href="https://ejsmit.github.io/website/network/">Network</a>
+                    
+                    
+                </div>
+            </li>
+
+        </ul>
+
+        
+        
+        <form class="form-inline my-2 my-lg-0" method="get" action="https://ejsmit.github.io/website/search.html">
+            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        
+
+    </div>
+
+</nav>
+
+
+
+        </div>
+      </div>
+
+      <div class="row">
+
+        
+
+<main aria-role="main" class="col">
+
+    <div class="single-page-header border-bottom">
+        <h1>SSH using certificates from a local CA</h1>
+    </div>
+
+
+    
+        
+    <div>
+        
+        <p class="text-muted">how to set up and configure a local ssh CA</p>
+        
+    
+        
+        <div class="m-0">
+            <small class="text-muted">
+                <i class="fas fa-clock"></i> 
+                
+                
+                    <time datetime="2021-01-24T00:00:00&#43;00:00">24 Jan, 2021</time>
+                
+
+                
+            </small>
+        </div>
+        
+    </div>    
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            
+      
+      
+      
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">My Notebook</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item "
+          
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/linux/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">Linux</span>
+          </a>
+          
+      
+      </li>
+      
+      
+      <li class="breadcrumb-item  active"
+          aria-current="page"
+          itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="https://ejsmit.github.io/website/linux/ssh-certs-ca/"
+             itemscope itemtype="http://schema.org/Thing"
+             itemprop="item" >
+          <span itemprop="name">SSH using certificates from a local CA</span>
+          </a>
+          
+      
+      </li>
+      
+        </ol>
+      </nav>
+      
+      <ol  class="nav navbar-nav">
+        
+      </ol>
+      
+      
+
+
+    <div class="homepage-content">
+        <h2 id="summary">Summary</h2>
+<p>This sections contains a short summary of exacly what need to happen to get everything to work.<br>
+More detail will be added later on.  Also note this is heavily customised for my own environment.
+It is not likely to work as is anywhere else.</p>
+<h3 id="setup">Setup</h3>
+<ul>
+<li>Create CA keys.</li>
+<li>Initialise serial to 0.  It will auto increment in each sign script.</li>
+</ul>
+<h3 id="host-certificates">Host Certificates</h3>
+<ul>
+<li>host keys should already exist as part of distribution installation.</li>
+<li>[script] sign them manually using sign-host-keys.sh</li>
+<li>[ansible] add HostCertificate lines to sshd_config to make sshd server announce certificates to remote clients</li>
+<li>[ansible] add @cert-authority to global ssh_known_hosts to make clients trust remote server certificates</li>
+<li>Optional - remove extra lines from known_hosts.</li>
+</ul>
+<h2 id="user-certificates">User Certificates</h2>
+<ul>
+<li>[script] Create and sign user certificate using sign-user-keys.sh</li>
+<li>[ansible] add TrustedUserCAKeys to sshd_config to make sshd server trust user certificates</li>
+<li>[ansible] add AuthorizedPrincipalsFile to sshd_config to enable pricipals to usernames mappings</li>
+<li>[ansible] add username&lt;-&gt;principals mappings files to each host</li>
+<li>Optional - remove local default id_rsa if is exists</li>
+<li>client ssh config file dotf.</li>
+<li>ssh-agent certificates load and test</li>
+</ul>
+<h2 id="view-certificates">View certificates</h2>
+<p>This can be used to show the details of any of the certificates created below.  Useful to
+double check that everything was created correctly.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-keygen -Lf id_ed25519-cert.pub
+</code></pre></div><h2 id="creating-local-ca">Creating local CA</h2>
+<p>Once-off setup.  Should never need to do this again, except to start again from scratch.</p>
+<p><code>.private</code> is an encrypted volume that can be mounted when the ca keys are required.  Assume
+all hosts can access the same volume.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.private/apps/ssh-ca
+<span style="color:#204a87">cd</span> ~/.private/apps/ssh-ca
+ssh-keygen -t ed25519 -C CA -f ca-key
+chmod <span style="color:#0000cf;font-weight:bold">600</span> ca-key*
+<span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;0&#34;</span> &gt; ca-key.serial.txt
+</code></pre></div><h2 id="manual-steps-on-individual-hosts">Manual steps on individual hosts</h2>
+<h3 id="signing-host-keys">Signing host keys</h3>
+<p>For me this is easy.  A single script.  Keys should already exist, and I just need to sign them.</p>
+<p><em>note: Raspbian installations still have DSA host keys.   I delete them.  DSA is old and even Ubuntu have
+removed these keys in their latest releases.</em></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sign-host-keys.sh
+</code></pre></div><p>For reference here is it.   I need to do some nasty things because root
+does not have access to my <code>private</code> mounted volume, so I cannot use
+<code>sudo</code> to give me access to both the <code>ca-key</code> file and <code>/etc/ssh</code> at the same time.</p>
+<p>I also create certificates valid for a year at a time.  At home my goal is ease of use and
+some security, so I do not worry too much about certificates with a longer lifespan.  I can always
+revoke certificates if I need to.</p>
+<p>Principal names are <code>hostname, hostname.local and hostname.home</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic">#!/usr/bin/env bash
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic"># exit when any command fails</span>
+<span style="color:#204a87">set</span> -e
+
+<span style="color:#204a87;font-weight:bold">function</span> generate_all <span style="color:#ce5c00;font-weight:bold">{</span>
+    ssh-keygen -s ~/.private/apps/ssh-ca/ca-key <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         -I <span style="color:#4e9a06">&#34;host:</span><span style="color:#204a87;font-weight:bold">$(</span>hostname<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         -n <span style="color:#4e9a06">&#34;</span><span style="color:#204a87;font-weight:bold">$(</span>hostname<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">,</span><span style="color:#204a87;font-weight:bold">$(</span>hostname<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">.local,</span><span style="color:#204a87;font-weight:bold">$(</span>hostname<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">.home&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         -V -5m:+365d <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         -h <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         -z +<span style="color:#000">$serial</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>         <span style="color:#000">$temp_dir</span>/ssh_host_*_key.pub
+    <span style="color:#000">count_certs</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>ls <span style="color:#000">$temp_dir</span>/ssh_host_*-cert.pub <span style="color:#000;font-weight:bold">|</span> wc -l<span style="color:#204a87;font-weight:bold">)</span>
+    <span style="color:#ce5c00;font-weight:bold">((</span><span style="color:#000">serial</span><span style="color:#ce5c00;font-weight:bold">=</span>serial+<span style="color:#000">$count_certs</span><span style="color:#ce5c00;font-weight:bold">))</span>  
+<span style="color:#ce5c00;font-weight:bold">}</span>
+
+<span style="color:#000">temp_dir</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
+cp /etc/ssh/ssh_host_*_key.pub <span style="color:#000">$temp_dir</span>
+
+<span style="color:#000">serial</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>cat ~/.private/apps/ssh-ca/ca-key.serial.txt<span style="color:#204a87;font-weight:bold">)</span>
+<span style="color:#8f5902;font-style:italic">#echo &#34;First serial to use: $serial&#34;</span>
+<span style="color:#000">count</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>ls <span style="color:#000">$temp_dir</span>/ssh_host_*_key.pub <span style="color:#000;font-weight:bold">|</span> wc -l<span style="color:#204a87;font-weight:bold">)</span>
+<span style="color:#8f5902;font-style:italic">#echo &#34;Number of key files: $count&#34;</span>
+
+generate_all
+
+<span style="color:#8f5902;font-style:italic">#echo &#34;New serial to write $serial&#34;</span>
+<span style="color:#204a87">echo</span> <span style="color:#000">$serial</span> &gt;~/.private/apps/ssh-ca/ca-key.serial.txt
+
+sudo cp <span style="color:#000">$temp_dir</span>/ssh_host*-cert.pub /etc/ssh
+rm -Rf <span style="color:#000">$temp_dir</span>
+</code></pre></div><h3 id="creating-and-signing-user-keys">Creating and signing user keys</h3>
+<p>I standardised on ed25519 keys and certificates at home.   It is relatively new, very small compared
+to rsa, and generally considered as a safe choice.  Even github use ed25519 in many of their examples.</p>
+<p>Again this is pretty easy for me.   I can just run a single script that does everything.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sign-user-keys.sh
+</code></pre></div><p>The script is pretty straightforward compare the the host script.  Create a new ed25519 key and
+sign it.  Nothing else.</p>
+<p>The principal name is the username prefixed with the word <em>user</em> to make sure it does not match the
+actual username.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic">#!/usr/bin/env bash
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic"># exit when any command fails</span>
+<span style="color:#204a87">set</span> -e
+
+<span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;Creating new user key:&#34;</span>
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
+
+<span style="color:#000">serial</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>cat ~/.private/apps/ssh-ca/ca-key.serial.txt<span style="color:#204a87;font-weight:bold">)</span>
+<span style="color:#8f5902;font-style:italic"># echo &#34;First serial to use: $serial&#34;</span>
+
+<span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;Signing key using CA private key&#34;</span>
+ssh-keygen -s ~/.private/apps/ssh-ca/ca-key <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    -I <span style="color:#4e9a06">&#34;user:</span><span style="color:#204a87;font-weight:bold">$(</span>whoami<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">@</span><span style="color:#204a87;font-weight:bold">$(</span>hostname<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    -n <span style="color:#4e9a06">&#34;user-</span><span style="color:#204a87;font-weight:bold">$(</span>whoami<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    -V -5m:+365d <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    -z <span style="color:#000">$serial</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    ~/.ssh/id_ed25519.pub
+
+<span style="color:#ce5c00;font-weight:bold">((</span><span style="color:#000">serial</span><span style="color:#ce5c00;font-weight:bold">=</span>serial+1<span style="color:#ce5c00;font-weight:bold">))</span>
+<span style="color:#8f5902;font-style:italic">#echo &#34;New serial to write $serial&#34;</span>
+<span style="color:#204a87">echo</span> <span style="color:#000">$serial</span> &gt;~/.private/apps/ssh-ca/ca-key.serial.txt
+</code></pre></div><h2 id="ansible-automatic-configuration">Ansible automatic configuration</h2>
+<p>All of this happens automatically through ansible playbooks.</p>
+<ul>
+<li>Copy the <code>ca-key.pub</code> file to each host and place in <code>/etc/ssh</code>, owned by root:root and mode 664. Ansible
+has its own copy if the public key file.</li>
+<li>Update <code>/etc/ssh/sshd_config</code> to add line <code>TrustedUserCAKeys /etc/ssh/ca-key.pub</code>.  This allows sshd to
+trust user certificates signed by the CA.</li>
+<li>Update <code>/etc/ssh/ssh_known_hosts</code> to add <code>@cert-authority * &lt;contents of ca-key.pub&gt;</code>.  This allows ssh
+clients to trust remote sshd host certificates signed by the CA.</li>
+<li>Create the <code>/etc/ssh/auth_principals</code> folder, and a file in that folder for each user that need to log
+on locally using signed certificates.  This file should contain the list of principals, one per line, that
+are allowedto log on as that user.  For my raspberry pi hosts I will for example need a file called <code>pi</code>
+because that is the name of the local user, and its contents will be <code>user-rsmit</code> and <code>user-pi</code>, allowing me
+to log on from other raspberry pis and also my desktops where I use rsmit as username.</li>
+<li>Update <code>/etc/ssh/sshd_config</code> to add line <code>AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u</code>. This enables
+the principal mapping using the file we created earlier.  Files hhould be mode 644.</li>
+<li>Update <code>/etc/ssh/sshd_config</code> to add a <code>HostCertificate &lt;path to certificate file&gt;</code> line for each host certificate
+found in <code>/etc/ssh</code>.  This will enable sshd to announce that it has host certificates available in addition to
+the usual public keys</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="client">Client:</h3>
+<p>Can also replace the <em>-v</em> with <em>-vvv</em></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh hostname -v
+</code></pre></div><h3 id="server">Server</h3>
+<p>No need to stop the server.  Just run another server in the foreground on a different port, using ^C to exit.<br>
+Again the <em>-d</em> and be replaced with <em>-ddd</em>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/sbin/sshd -d -p <span style="color:#0000cf;font-weight:bold">22222</span>
+ssh servername -p <span style="color:#0000cf;font-weight:bold">22222</span> -v
+</code></pre></div><h2 id="windows">Windows</h2>
+<p>The setup on windows is slightly more manual.   Microsoft provides OpenSSH as a standard Windows feature
+in Windows 10 and later.  The default shell when connected is Windows CMD.</p>
+<p>For some reason my sshd resets to manual startup after updates.   Still investigating why&hellip;..</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#204a87">Get-WindowsCapability</span> <span style="color:#000">-Online</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#204a87">Where-Object</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">$_</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Name</span> <span style="color:#ce5c00;font-weight:bold">-like</span> <span style="color:#4e9a06">&#39;OpenSSH*&#39;</span><span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#204a87">Add-WindowsCapability</span> <span style="color:#000">-Online</span>
+<span style="color:#204a87">Start-Service</span> <span style="color:#000">sshd</span>
+<span style="color:#204a87">Set-Service</span> <span style="color:#000">sshd</span> <span style="color:#000">-StartupType</span> <span style="color:#000">Automatic</span>
+</code></pre></div><p>System-wide configuration and keys are in <code>C:\ProgramData\ssh</code>.  User configuration is in <code>$HOME/.ssh</code>.</p>
+<p>Windows configuration is going to be more manual.  Also because of the differences in wildcard handling
+between linux and Windows even filenames need to be specified manually.</p>
+<p>Copy the following ssh-keygen command, making sure not to copy the final newline, edit the serial number
+to the correct value, press enter and then manually add all the ssh_host_*_key.pub files to the final
+line from the command.   Wildcards are not allowed.  Replace computername with the correct value.  Cannot
+use the %COMPUTERNAME% variable because it is all uppercase, which is not recognised as similar to lowercase
+hostnames used by ssh.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd \programdata\ssh
+ssh-keygen -s p:/apps/ssh-ca/ca-key ^
+     -I &#34;host:%COMPUTERNAME%&#34; ^
+     -n &#34;computername,computername.local,computername.home&#34; ^
+     -V -5m:+365d ^
+     -h ^
+     -z +21 ^
+</code></pre></div><p>For user certificates the process is very similar. Edit the serial number and run the following:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh-keygen -t ed25519 -f %HOME%/.ssh/id_ed25519
+ssh-keygen -s p:/apps/ssh-ca/ca-key ^
+    -I &#34;user:%USERNAME%@%COMPUTERNAME%&#34; ^
+    -n &#34;user-%USERNAME%&#34; ^
+    -V -5m:+365d ^
+    -z 25 ^
+    %HOME%/.ssh/id_ed25519.pub
+</code></pre></div><p>Update the ca serial number with the user serial +1.</p>
+<p>Get a copy of the public key</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">copy p:\apps\ssh-ca\ca-key.pub c:\ProgramData\ssh
+</code></pre></div><p>Add the following to <code>sssh_config</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">HostCertificate __PROGRAMDATA__/ssh/ssh_host_rsa_key-cert.pub                                                
+HostCertificate __PROGRAMDATA__/ssh/ssh_host_dsa_key-cert.pub                                                
+HostCertificate __PROGRAMDATA__/ssh/ssh_host_ecdsa_key-cert.pub                                              
+HostCertificate __PROGRAMDATA__/ssh/ssh_host_ed25519_key-cert.pub
+TrustedUserCAKeys __PROGRAMDATA__/ssh/ca-key.pub                                                     
+AuthorizedPrincipalsFile __PROGRAMDATA__/ssh/auth_principals/%u  
+</code></pre></div><p>Create a directory called <code>auth_principals</code> and a file called <code>rsmit</code> with the following content:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">user-rsmit
+user-pi
+</code></pre></div><p>Thats is.  Restart sshd and everythign will most likely fail because of permission problems.
+Make sure everything  (all the certificates and keys, as well as the auth_principals files) are
+owned by system, with only the system adn administrators to have full control, and nobody else
+to even have read access.</p>
+<p>Finally configure your ssh-agent to load the keys and certificates.  In Windows private keys can
+be removed after adding them to your ssh-agent, but I am not going to trust that and keep mine around.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Set-Service ssh-agent -StartupType Automatic
+Start-Service ssh-agent
+ssh-add
+ssh-add -L
+</code></pre></div>
+    </div>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+</div>
+
+
+
+
+</main>
+
+
+
+        
+    <footer class="container-fluid site-footer py-3">
+    <div class="container">
+        <p class="text-muted border-bottom text-center py-3">
+            
+        </p>
+    
+        <div class="text-center justify-content-between align-items-center mt-5">
+            <h2 class="footer-heading text-muted">My Notebook</h2><div class="text-muted"> This is a repository for my own personal use.  The information 
+      on this site may not work outside of my own environment.  You have been warned....</div><ul class="footer-nav px-0">
+            <li>
+                <i class="fa fa-keyboard-o" aria-hidden="true"></i> <a href="" rel="author"></a>
+            </li>
+    
+            
+            </ul>
+    
+        </div>
+        </div>
+        <div class="si-license">
+        <div class="text-muted text-sm-center">
+          <!-- raw HTML omitted -->© ejsmit 2019<!-- raw HTML omitted --> &middot; 
+        </div>
+      </div>
+      
+    </footer>
+
+    
+    
+
+
+      </div>
+
+    </div>
+</body>
+</html>
+

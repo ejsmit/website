@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>preprocessing on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/preprocessing/</link>
+    <description>Recent content in preprocessing on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/preprocessing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SimpleImputer: Imputing missing values</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/</guid>
+      <description>Replace blanks, NaNs or other placeholders with numerical values. Machine learning usually expects all data to be in arrays without any missing values. One strategy is to delete all rows with missing data, but this is especially bad in small datasets. A better solution is to infer the values from the data that is present.
+sklearn.impute.SimpleImputer sklearn.impute.SimpleImputer(missing_values=nan, strategy=&amp;#39;mean&amp;#39;, fill_value=None) data works with anything that numpy.asarray can convert to a matrix, including pandas dataframes.</description>
+    </item>
+    
+    <item>
+      <title>KNNImputer: Imputing missing values</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/knnimputer/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/knnimputer/</guid>
+      <description>Replace blanks, NaNs or other placeholders with numerical values. Machine learning usually expects all data to be in arrays without any missing values. One strategy is to delete all rows with missing data, but this is especially bad in small datasets. A better solution is to infer the values from the data that is present. This class uses K-Nearest Neighbors to infer the new values
+sklearn.impute.KNNImputer sklearn.impute.KNNImputer(missing_values=nan, n_neighbors=5, weights=&amp;#39;uniform&amp;#39;) data works with anything that numpy.</description>
+    </item>
+    
+    <item>
+      <title>Preprocessing</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preprocessing</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/untitled/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/untitled/</guid>
+      <description>np.__version__ &#39;1.19.2&#39;  </description>
+    </item>
+    
+  </channel>
+</rss>

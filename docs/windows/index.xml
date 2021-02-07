@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on My Notebook</title>
+    <link>https://ejsmit.github.io/website/windows/</link>
+    <description>Recent content in Windows on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH using certificate from a local CA</title>
+      <link>https://ejsmit.github.io/website/windows/ssh-certs-ca/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/windows/ssh-certs-ca/</guid>
+      <description>CONTENT NOT RENDERED
+Only insert details here if you want to enter any additional detail about the purpose of the redirect, otherwise you can just leave this portion of your file blank.</description>
+    </item>
+    
+  </channel>
+</rss>

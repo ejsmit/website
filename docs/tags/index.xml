@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>certificates</title>
+      <link>https://ejsmit.github.io/website/tags/certificates/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/certificates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://ejsmit.github.io/website/tags/linux/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openssh</title>
+      <link>https://ejsmit.github.io/website/tags/openssh/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/openssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://ejsmit.github.io/website/tags/windows/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>daily</title>
       <link>https://ejsmit.github.io/website/tags/daily/</link>
@@ -17,11 +53,29 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://ejsmit.github.io/website/tags/linux/</link>
-      <pubDate>Fri, 10 Jul 2020 17:41:19 +0100</pubDate>
+      <title>ml</title>
+      <link>https://ejsmit.github.io/website/tags/ml/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ejsmit.github.io/website/tags/linux/</guid>
+      <guid>https://ejsmit.github.io/website/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preprocessing</title>
+      <link>https://ejsmit.github.io/website/tags/preprocessing/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/preprocessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>samples</title>
+      <link>https://ejsmit.github.io/website/tags/samples/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/samples/</guid>
       <description></description>
     </item>
     
@@ -80,6 +134,24 @@
     </item>
     
     <item>
+      <title>classification</title>
+      <link>https://ejsmit.github.io/website/tags/classification/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clustering</title>
+      <link>https://ejsmit.github.io/website/tags/clustering/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>containers</title>
       <link>https://ejsmit.github.io/website/tags/containers/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
@@ -130,6 +202,24 @@
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/tags/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>supervised</title>
+      <link>https://ejsmit.github.io/website/tags/supervised/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/supervised/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unsupervised</title>
+      <link>https://ejsmit.github.io/website/tags/unsupervised/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/unsupervised/</guid>
       <description></description>
     </item>
     

@@ -6,27 +6,56 @@
     <description>Recent content on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH using certificate from a local CA</title>
+      <link>https://ejsmit.github.io/website/windows/ssh-certs-ca/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/windows/ssh-certs-ca/</guid>
+      <description>CONTENT NOT RENDERED
+Only insert details here if you want to enter any additional detail about the purpose of the redirect, otherwise you can just leave this portion of your file blank.</description>
+    </item>
+    
+    <item>
+      <title>SSH using certificates from a local CA</title>
+      <link>https://ejsmit.github.io/website/linux/ssh-certs-ca/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/linux/ssh-certs-ca/</guid>
+      <description>Summary This sections contains a short summary of exacly what need to happen to get everything to work.
+More detail will be added later on. Also note this is heavily customised for my own environment. It is not likely to work as is anywhere else.
+Setup  Create CA keys. Initialise serial to 0. It will auto increment in each sign script.  Host Certificates  host keys should already exist as part of distribution installation.</description>
+    </item>
+    
     <item>
       <title>1 January 2021</title>
       <link>https://ejsmit.github.io/website/posts/2021/01/01/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/posts/2021/01/01/</guid>
-      <description>Starting a new blog today to chronicle my progress in getting up to speed on machine learning. I am not new to ML and I am already very familiar with many libraries, tools, and even some of the maths behind it, but a refresher on some of the basics would still be useful.
-Had to update my website to add a new blog section, and some templates to make the blog work, including the section list and the navigation bar.</description>
+      <description>Placeholder for blog,,,,,</description>
     </item>
     
     <item>
-      <title>Install with conda</title>
-      <link>https://ejsmit.github.io/website/r/install_with_conda/</link>
-      <pubDate>Thu, 19 Nov 2020 15:28:53 +0000</pubDate>
+      <title>Sample Data</title>
+      <link>https://ejsmit.github.io/website/ml/sample_data/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ejsmit.github.io/website/r/install_with_conda/</guid>
-      <description>Install a recent version of minconda.
-First steo is to find latest version of r-base in the r channel. Don&amp;rsquo;t use the conda-forge versions.
-conda search -c r r-base Lets asume it is version 3.6.1, which was the latest at the time of writing. Create a new empty environment with this version number as part of the environment name.
-conda create -n r_361 conda activate r_361 Configure the search path in this new enviornment</description>
+      <guid>https://ejsmit.github.io/website/ml/sample_data/</guid>
+      <description>scikit-learn See the documentation at https://scikit-learn.org/stable/datasets/index.html
+Included datasets (sklearn.datasets) For all included datasets below use return_X_y=True parameter to return (X,y), otherwise a Bunch dictlike object will be returned with various attributes including data, target, feature_names, target_names. Use as_frame=True to return pandas DataFrame or Series objects
+ load_boston(*[, return_X_y]) (regression). load_iris(*[, return_X_y, as_frame]) (classification). load_diabetes(*[, return_X_y, as_frame]) (regression). load_digits(*[, n_class, return_X_y, as_frame]) (classification). load_linnerud(*[, return_X_y, as_frame]) (multi-ouput regression) load_wine(*[, return_X_y, as_frame]) (classification).</description>
+    </item>
+    
+    <item>
+      <title>SimpleImputer: Imputing missing values</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/simpleimputer/</guid>
+      <description>Replace blanks, NaNs or other placeholders with numerical values. Machine learning usually expects all data to be in arrays without any missing values. One strategy is to delete all rows with missing data, but this is especially bad in small datasets. A better solution is to infer the values from the data that is present.
+sklearn.impute.SimpleImputer sklearn.impute.SimpleImputer(missing_values=nan, strategy=&amp;#39;mean&amp;#39;, fill_value=None) data works with anything that numpy.asarray can convert to a matrix, including pandas dataframes.</description>
     </item>
     
     <item>
@@ -85,7 +114,7 @@ Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/containers/docker/links/</guid>
-      <description>Dockerfile  Running Docker Containers as Current Host User  https://containo.us/blog/traefik-2-tls-101-23b4fbee81f1/</description>
+      <description>Dockerfile  Running Docker Containers as Current Host User Traefik 2 &amp;amp; TLS 101 - HTTPS (&amp;amp; TCP over TLS) for everyone!  </description>
     </item>
     
     <item>
@@ -107,12 +136,31 @@ Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 
     </item>
     
     <item>
+      <title>KNNImputer: Imputing missing values</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/knnimputer/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/knnimputer/</guid>
+      <description>Replace blanks, NaNs or other placeholders with numerical values. Machine learning usually expects all data to be in arrays without any missing values. One strategy is to delete all rows with missing data, but this is especially bad in small datasets. A better solution is to infer the values from the data that is present. This class uses K-Nearest Neighbors to infer the new values
+sklearn.impute.KNNImputer sklearn.impute.KNNImputer(missing_values=nan, n_neighbors=5, weights=&amp;#39;uniform&amp;#39;) data works with anything that numpy.</description>
+    </item>
+    
+    <item>
       <title>Kubernetes Links</title>
       <link>https://ejsmit.github.io/website/containers/kubernetes/links/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/containers/kubernetes/links/</guid>
-      <description>Kubernetes Implementations  Ubuntu MicroK8s  Software Pakaging Helm.sh - The package manager for Kubernetes</description>
+      <description>Kubernetes Implementations  Ubuntu MicroK8s  Software Pakaging  Helm.sh - The package manager for Kubernetes  </description>
+    </item>
+    
+    <item>
+      <title>Preprocessing</title>
+      <link>https://ejsmit.github.io/website/ml/preprocessing/untitled/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/preprocessing/untitled/</guid>
+      <description>np.__version__ &#39;1.19.2&#39;  </description>
     </item>
     
     <item>
@@ -140,9 +188,9 @@ Dockerfile FROM python:3.8-slim as bulder ENV VIRTUAL_ENV=/opt/venv RUN python3 
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/git/ssh/</guid>
-      <description>Creating a new key I use the names id_rsa_github and and id_rsa_github.pub for my keys, using a unique key from evey host that I need to connect from. Use a keepass long random password.
-ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f ~/.ssh/id_rsa_github To add to the ssh agent use:
-gpg-connect-agent UPDATESTARTUPTTY /bye ssh-add ~/.ssh/id_rsa_github ssh-add -L Configuring GitGub Open the user settings pagem and find SSH and GPG keys on the left.</description>
+      <description>Updates  January 2021: Change from rsa to ed25519 keys.  Creating a new key I use the names id_25519_github and and id_25519_github.pub for my keys, using a unique key from evey host that I need to connect from. Use a keepass long random password.
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github To add to the ssh agent use:
+ssh-add ~/.ssh/id_ed25519_github ssh-add -L Configuring GitGub Open the user settings pagem and find SSH and GPG keys on the left.</description>
     </item>
     
     <item>
@@ -151,7 +199,11 @@ gpg-connect-agent UPDATESTARTUPTTY /bye ssh-add ~/.ssh/id_rsa_github ssh-add -L 
       <pubDate>Sat, 18 May 2019 19:49:11 +0100</pubDate>
       
       <guid>https://ejsmit.github.io/website/internet/cloudflare/</guid>
-      <description>Links  https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/ https://1.1.1.1/  ipv4 addresses 1.1.1.1 1.0.0.1 ipv6 addresses 2606:4700:4700::1111 2606:4700:4700::1001 </description>
+      <description>Links  https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/ https://1.1.1.1/  ipv4 addresses 1.1.1.1 1.0.0.1 ipv6 addresses 2606:4700:4700::1111 2606:4700:4700::1001 dns over https https://developers.cloudflare.com/1.1.1.1/dns-over-https
+Yes you still need regular DNS present to resolve the url below! Usually used inside browser, while the rest of the system uses regular DNS.
+https://cloudflare-dns.com/dns-query udp wireformat DNS wireformat is defined in RFC1035.
+examples using both GET and PUT
+curl -H &amp;#39;accept: application/dns-message&amp;#39; -v &amp;#39;https://cloudflare-dns.com/dns-query?dns=q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB&amp;#39; | hexdump echo -n &amp;#39;q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB&amp;#39; | base64 -D | curl -H &amp;#39;content-type: application/dns-message&amp;#39; --data-binary @- https://cloudflare-dns.</description>
     </item>
     
     <item>

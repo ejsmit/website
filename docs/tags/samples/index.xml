@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>samples on My Notebook</title>
+    <link>https://ejsmit.github.io/website/tags/samples/</link>
+    <description>Recent content in samples on My Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/samples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sample Data</title>
+      <link>https://ejsmit.github.io/website/ml/sample_data/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/ml/sample_data/</guid>
+      <description>scikit-learn See the documentation at https://scikit-learn.org/stable/datasets/index.html
+Included datasets (sklearn.datasets) For all included datasets below use return_X_y=True parameter to return (X,y), otherwise a Bunch dictlike object will be returned with various attributes including data, target, feature_names, target_names. Use as_frame=True to return pandas DataFrame or Series objects
+ load_boston(*[, return_X_y]) (regression). load_iris(*[, return_X_y, as_frame]) (classification). load_diabetes(*[, return_X_y, as_frame]) (regression). load_digits(*[, n_class, return_X_y, as_frame]) (classification). load_linnerud(*[, return_X_y, as_frame]) (multi-ouput regression) load_wine(*[, return_X_y, as_frame]) (classification).</description>
+    </item>
+    
+  </channel>
+</rss>
