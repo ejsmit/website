@@ -16,4 +16,4 @@ tags: [docker, links]
 
 ## Software Pakaging
 
-[Helm.sh - The package manager for Kubernetes](https://helm.sh/)
+* [Helm.sh - The package manager for Kubernetes](https://helm.sh/)

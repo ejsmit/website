@@ -3,6 +3,7 @@ title: "Install with conda"
 date: 2020-11-19T15:28:53Z
 subtitle: 'how to create a R environment using conda'
 description: ''
+draft: true
 ---
 
 Install a recent version of minconda. 
