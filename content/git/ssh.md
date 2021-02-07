@@ -5,19 +5,24 @@ subtitle: 'Public Key Authentication and Certificates'
 description: ''
 tags: [git, ssh]
 ---
+
+## Updates
+
+* January 2021: Change from rsa to ed25519 keys.
+
+
 ## Creating a new key
 
-I use the names `id_rsa_github` and `and id_rsa_github.pub` for my keys, using a unique key from evey host that I need to connect from.  Use a keepass long random password.
+I use the names `id_25519_github` and `and id_25519_github.pub` for my keys, using a unique key from evey host that I need to connect from.  Use a keepass long random password.
 
 ```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/id_rsa_github
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github
 ```
 
 To add to the ssh agent use:
 
 ```
-gpg-connect-agent UPDATESTARTUPTTY /bye
-ssh-add  ~/.ssh/id_rsa_github
+ssh-add  ~/.ssh/id_ed25519_github
 ssh-add -L
 ```
 
@@ -28,10 +33,10 @@ and call it `user@host`, using your current username that you are using on the h
 connecting from.  
 
 ```
-cat ~/.ssh/id_rsa_github.pub | xclip
+cat ~/.ssh/id_ed25519_github.pub
 ```
 
-and paste it into the key field on GitHub
+Copy and paste it into the key field on GitHub
 
 
 ## Test your connection
