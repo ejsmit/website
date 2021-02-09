@@ -8,16 +8,6 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SSH using certificate from a local CA</title>
-      <link>https://ejsmit.github.io/website/windows/ssh-certs-ca/</link>
-      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/windows/ssh-certs-ca/</guid>
-      <description>CONTENT NOT RENDERED
-Only insert details here if you want to enter any additional detail about the purpose of the redirect, otherwise you can just leave this portion of your file blank.</description>
-    </item>
-    
-    <item>
       <title>SSH using certificates from a local CA</title>
       <link>https://ejsmit.github.io/website/linux/ssh-certs-ca/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
@@ -26,6 +16,16 @@ Only insert details here if you want to enter any additional detail about the pu
       <description>Summary This sections contains a short summary of exacly what need to happen to get everything to work.
 More detail will be added later on. Also note this is heavily customised for my own environment. It is not likely to work as is anywhere else.
 Setup  Create CA keys. Initialise serial to 0. It will auto increment in each sign script.  Host Certificates  host keys should already exist as part of distribution installation.</description>
+    </item>
+    
+    <item>
+      <title>SSH using certificates from a local CA</title>
+      <link>https://ejsmit.github.io/website/windows/ssh-certs-ca/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/windows/ssh-certs-ca/</guid>
+      <description>CONTENT NOT RENDERED
+Only insert details here if you want to enter any additional detail about the purpose of the redirect, otherwise you can just leave this portion of your file blank.</description>
     </item>
     
     <item>

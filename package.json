@@ -2,6 +2,7 @@
   "name": "resources",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "bootstrap": "4.x.x",

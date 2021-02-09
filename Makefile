@@ -2,7 +2,7 @@
 SHELL=/bin/bash
 
 HUGO := hugo
-NPM := yarn
+NPM := npm
 NBCONVERT := jupyter nbconvert
 
 STATIC_DIR := static/
@@ -52,7 +52,7 @@ allclean:
 
 modules:  node_modules resources/_gen
 
-node_modules: package.json yarn.lock
+node_modules: package.json package-lock.json
 	$(NPM) install
 
 resources/_gen:  node_modules

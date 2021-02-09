@@ -6,7 +6,25 @@
     <description>Recent content in Tags on My Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ejsmit.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>terminal</title>
+      <link>https://ejsmit.github.io/website/tags/terminal/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://ejsmit.github.io/website/tags/windows/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ejsmit.github.io/website/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>certificates</title>
       <link>https://ejsmit.github.io/website/tags/certificates/</link>
@@ -31,15 +49,6 @@
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ejsmit.github.io/website/tags/openssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://ejsmit.github.io/website/tags/windows/</link>
-      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/tags/windows/</guid>
       <description></description>
     </item>
     

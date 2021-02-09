@@ -7,12 +7,12 @@
 
 <title>
     
-    Website Links | 
+    My Windows setup | 
     My Notebook
     
 </title>
 
-<link rel="canonical" href="https://ejsmit.github.io/website/website/links/">
+<link rel="canonical" href="https://ejsmit.github.io/website/windows/dev-setup/">
 
 
 
@@ -151,7 +151,7 @@
 <main aria-role="main" class="col">
 
     <div class="single-page-header border-bottom">
-        <h1>Website Links</h1>
+        <h1>My Windows setup</h1>
     </div>
 
 
@@ -159,7 +159,7 @@
         
     <div>
         
-        <p class="text-muted">Various website related web links</p>
+        <p class="text-muted">Windows Terminal and console tools developer setup </p>
         
     
         
@@ -168,7 +168,7 @@
                 <i class="fas fa-clock"></i> 
                 
                 
-                    <time datetime="2020-04-08T00:00:00&#43;00:00">8 Apr, 2020</time>
+                    <time datetime="2021-02-01T00:00:00&#43;00:00">1 Feb, 2021</time>
                 
 
                 
@@ -203,10 +203,10 @@
           
           itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-          <a href="https://ejsmit.github.io/website/website/"
+          <a href="https://ejsmit.github.io/website/windows/"
              itemscope itemtype="http://schema.org/Thing"
              itemprop="item" >
-          <span itemprop="name">Website</span>
+          <span itemprop="name">Windows</span>
           </a>
           
       
@@ -217,10 +217,10 @@
           aria-current="page"
           itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-          <a href="https://ejsmit.github.io/website/website/links/"
+          <a href="https://ejsmit.github.io/website/windows/dev-setup/"
              itemscope itemtype="http://schema.org/Thing"
              itemprop="item" >
-          <span itemprop="name">Website Links</span>
+          <span itemprop="name">My Windows setup</span>
           </a>
           
       
@@ -237,11 +237,76 @@
 
 
     <div class="homepage-content">
-        <h2 id="misc">Misc</h2>
+        <h2 id="summary">Summary</h2>
+<p>This is not a full Windows configuration guide.   It is just a list of a few tools that I use
+and my current configuration.  Most of these tools are console tools that can also be used
+when I ssh into my Windows box.</p>
+<h2 id="installation-instructions">Installation Instructions</h2>
+<h3 id="powershell">Powershell</h3>
+<p>Install the latest powershell core from an administrative powershell</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">winget install Microsoft.PowerShell
+</code></pre></div><p>Links:</p>
 <ul>
-<li><a href="https://casesandberg.github.io/react-color/">Color picker</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows">Windows Documentation</a></li>
+<li><a href="https://aka.ms/powershell-release?tag=stable">Github page</a></li>
 </ul>
+<p>Powershell core is installed by default in <code>$env:ProgramFiles\PowerShell\&lt;version&gt;</code></p>
+<h3 id="windows-terminal">Windows Terminal</h3>
+<p>Install the latest Windows Terminal from an administrative powershell</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">winget install Microsoft.WindowsTerminal
+</code></pre></div><h3 id="openssh">openssh</h3>
+<p>Install openssh using instructions in <a href="https://ejsmit.github.io/website/linux/ssh-certs-ca/">SSH using certificates from a local CA</a></p>
+<p>Because I usually need PowerShell when connecting through ssh, I run the following for the current version 7:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">New-ItemProperty -Path &#34;HKLM:\SOFTWARE\OpenSSH&#34; -Name DefaultShell -Value &#34;$env:ProgramFiles\PowerShell\7\pwsh.exe&#34; -PropertyType String -Force
+get-service sshd | restart-service
+</code></pre></div><h3 id="scoop">scoop</h3>
+<p>Installer for windows developer packages.  Does not require admin privileges, and installs everything inside
+home directory.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$env:SCOOP=&#39;D:\rsmit\scoop&#39;
+[environment]::setEnvironmentVariable(&#39;SCOOP&#39;,$env:SCOOP,&#39;User&#39;)
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&#39;https://get.scoop.sh&#39;)
 
+scoop install sudo
+</code></pre></div><p>If this does not work try this first</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+</code></pre></div><h3 id="git">git</h3>
+<p>Install the latest git from an administrative powershell</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">winget install Git
+</code></pre></div><h3 id="text-editor">text editor</h3>
+<p>Install a text editor that can be used only from a console without popping up new windows.  This is really
+useful when connecting through a ssh session.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">scoop install micro
+</code></pre></div><h3 id="yori-and-sdir">yori and sdir</h3>
+<p><a href="http://www.malsmith.net/yori/">Yori</a> is a replacement for Windows CMD.  Colours, better keyboard shortcuts,
+completion, and more&hellip;.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">scoop install yori
+</code></pre></div><p>This also gives you <code>sdir</code> which is now available everywhere, even powershell. Much better looking directtory listings.</p>
+<h3 id="post-git-and-starship">post-git and starship</h3>
+<p>Install both of these using scoop.  To be safe also make sure that the latest vcredist2019 package is installed.
+Also install a font that can display all of starship&rsquo;s symbols.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">scoop bucket add extras
+scoop install extras/vcredist2019
+
+scoop bucket add nerd-fonts
+sudo scoop install CascadiaCode-NF-Mono
+
+scoop install starship
+scoop install posh-git
+</code></pre></div><p>Now edit you $PROFILE using the command <code>micro $PROFILE</code> and edit it to include the following:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># posh-git should be second so that it does not update the prompt.  We only want the
+# completion to be available. Starship does the git prompt.                                           
+Invoke-Expression (&amp;starship init powershell)                                                         
+Import-Module posh-git                           
+</code></pre></div><h3 id="python">python</h3>
+<p><code>miniconda</code> is available through scoop and winget, but I prefer <code>miniforge</code> these days.  Similar to miniconda, just
+with conda-forge as default channel.   Unfortunately this still means a manual install.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$url = &#34;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe&#34;
+$downloads = (New-Object -ComObject Shell.Application).NameSpace(&#39;shell:Downloads&#39;).Self.Path	
+$outfile = join-path $downloads Miniforge3-Windows-x86_64.exe
+
+Invoke-WebRequest -Uri $url -OutFile $outfile
+start-process -filepath $outfile -ArgumentList &#34;/InstallationType=JustMe /AddToPath=1 /RegisterPython=0 /S /D=d:\rsmit\miniforge3&#34; -wait
+</code></pre></div>
     </div>
 
 

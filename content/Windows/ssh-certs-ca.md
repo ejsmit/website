@@ -1,5 +1,5 @@
 ---
-title: "SSH using certificate from a local CA"
+title: "SSH using certificates from a local CA"
 date: 2021-01-24
 subtitle: 'how to set up and configure a local ssh CA'
 description: ''
