@@ -36,14 +36,5 @@ sklearn.impute.KNNImputer sklearn.impute.KNNImputer(missing_values=nan, n_neighb
       <description></description>
     </item>
     
-    <item>
-      <title>Preprocessing</title>
-      <link>https://ejsmit.github.io/website/ml/preprocessing/untitled/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ejsmit.github.io/website/ml/preprocessing/untitled/</guid>
-      <description>np.__version__ &#39;1.19.2&#39;  </description>
-    </item>
-    
   </channel>
 </rss>

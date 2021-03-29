@@ -34,6 +34,19 @@
                 </div>
             </li>
 
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    API Docs
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {{ range .Site.Data.apidoc.api }}
+                    <a class="dropdown-item" target="_blank" href="{{ .url }}">{{ .name }}</a>
+                    {{ end }}
+                </div>
+            </li>
+
         </ul>
 
         {{/*  right Navbar  */}}
