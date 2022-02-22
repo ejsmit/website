@@ -1,6 +1,6 @@
 {
     "yaml.schemas": {
-        "https://json.schemastore.org/github-action.json": "file:///home/rsmit/projects/website/.github/workflows/deploy.yml",
+        "https://json.schemastore.org/github-action.json": ".github/workflows/deploy.yml",
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
         
     }
