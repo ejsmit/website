@@ -1,0 +1,8 @@
+name: website
+dependencies:
+  - python
+  - mkdocs
+  - nbconvert
+  - pip:
+    - mkdocs-material
+

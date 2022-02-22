@@ -1,0 +1,50 @@
+site_name: Rassie Smit
+
+copyright: Copyright &copy; 2019 - 2022 Rassie Smit
+
+theme: 
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      primary: purple
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ejsmit
+      name: ejsmit on github
+
+plugins:
+  - search
+  - tags: 
+      tags_file: tags.md
+
+markdown_extensions:
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format      
